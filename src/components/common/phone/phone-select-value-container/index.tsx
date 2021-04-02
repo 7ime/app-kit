@@ -28,7 +28,7 @@ const PhoneSelectValueContainer: SelectComponents<ISelect.Option, false>['ValueC
 
     const classNames = classnames(
         css.phoneSelectValueContainer,
-        {[css.withValue]: value},
+        {[css.withValue]: !!value},
     )
 
     return (

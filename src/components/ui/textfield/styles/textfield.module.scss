@@ -1,0 +1,212 @@
+@import "~@styles/variables/colors.module.scss";
+@import "~@styles/variables/shared.module.scss";
+
+.textfield {
+    :global(.MuiFormControl-root) {
+        width: 100%;
+    }
+
+    label + :global(.MuiInput-formControl) {
+        margin-top: 18px;
+    }
+
+    :global(.MuiFormLabel-root) {
+        font-family: $font;
+        font-size: 13px;
+        color: $grey;
+        transition: 0.15s ease-in-out;
+
+        &:global(.Mui-focused), &:global(.MuiInputLabel-shrink) {
+            color: $grey;
+            transform: translate(0, 1.5px);
+        }
+    }
+
+    :global(.MuiInput-formControl) {
+        &:before {
+            border-color: $border_color;
+        }
+
+        &:hover:not(:global(.Mui-disabled)):before {
+            border-bottom: 1px solid $border_color;
+        }
+
+        &:after {
+            border-color: $primary;
+            transform: scale(1);
+            opacity: 0;
+            transition: 0.15s ease-in-out;
+        }
+
+        &:global(.Mui-focused):after {
+            opacity: 1;
+        }
+    }
+
+    &.is_success {
+        :global(.MuiInput-formControl):after {
+            border-color: $success;
+            opacity: 1;
+        }
+    }
+
+    &.is_error {
+        :global(.MuiInput-formControl):after {
+            border-color: $error;
+            opacity: 1;
+        }
+    }
+
+    :global(.MuiInputBase-input) {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 10px 0 8px;
+        font-size: 13px;
+    }
+
+    .validationMessage {
+        margin-top: 0.5rem;
+    }
+
+    //position: relative;
+    //padding-top: 18px;
+    //
+    //.label {
+    //    position: absolute;
+    //    top: 0;
+    //    left: 0;
+    //    font-size: 13px;
+    //    background-color: #fff;
+    //    padding: 0;
+    //    color: $grey;
+    //    z-index: 2;
+    //    transition: 0.15s ease-in-out;
+    //    pointer-events: none;
+    //}
+    //
+    //&.is_blur .label {
+    //    transform: translateY(25px);
+    //}
+    //
+    //.controlWrap {
+    //    position: relative;
+    //    border-bottom: 1px solid $border_color;
+    //
+    //    &:before {
+    //        transition: 0.15s ease-in-out;
+    //        opacity: 0;
+    //        pointer-events: none;
+    //        position: absolute;
+    //        content: '';
+    //        left: 0;
+    //        bottom: -1px;
+    //        width: 100%;
+    //        height: 2px;
+    //        background-color: $primary;
+    //    }
+    //}
+    //
+    //&.is_focused .controlWrap {
+    //    &:before {
+    //        opacity: 1;
+    //    }
+    //}
+    //
+    //&.is_success .controlWrap {
+    //    &:before {
+    //        opacity: 1;
+    //        background-color: $green;
+    //        transition: none;
+    //    }
+    //}
+    //
+    //&.is_error .controlWrap {
+    //    &:before {
+    //        opacity: 1;
+    //        background-color: $red;
+    //        transition: none;
+    //    }
+    //}
+    //
+    //&.is_disabled .controlWrap {
+    //    &:before {
+    //        opacity: 0;
+    //    }
+    //}
+    //
+    //.controlWrapInput {
+    //    display: flex;
+    //    align-items: center;
+    //}
+    //
+    //.controlWrapTextArea {
+    //
+    //}
+    //
+    //.control {
+    //    font-family: $font;
+    //    width: 100%;
+    //    outline: none;
+    //    border: none;
+    //    font-size: 13px;
+    //}
+    //
+    //.controlInput {
+    //    text-overflow: ellipsis;
+    //    white-space: nowrap;
+    //    overflow: hidden;
+    //    padding: 10px 0 8px;
+    //}
+    //
+    //.controlTextarea {
+    //    display: block;
+    //    resize: none;
+    //    padding: 0;
+    //    margin: 10px 0 8px;
+    //}
+    //
+    //.triggers {
+    //    display: flex;
+    //    margin-left: 3px;
+    //}
+    //
+    //.trigger {
+    //    cursor: pointer;
+    //    width: 25px;
+    //    height: 25px;
+    //    background-position: 50% 50%;
+    //    background-repeat: no-repeat;
+    //    background-size: 18px;
+    //    opacity: 0.2;
+    //    transition: opacity $transition;
+    //
+    //    &:hover {
+    //        opacity: 1;
+    //    }
+    //}
+    //
+    //.triggerClear {
+    //    background-image: url('~@images/icons/x.svg');
+    //}
+    //
+    //.triggerEye {
+    //    background-size: 15px;
+    //    background-image: url('~@images/icons/eye.svg');
+    //}
+    //
+    //.triggerEyeOff {
+    //    background-size: 15px;
+    //    background-image: url('~@images/icons/eye-off.svg');
+    //}
+    //
+    //.validationMessage {
+    //    margin-top: 0.5rem;
+    //}
+    //
+    //&.is_disabled {
+    //    pointer-events: none;
+    //    opacity: 0.5;
+    //    user-select: none;
+    //}
+}

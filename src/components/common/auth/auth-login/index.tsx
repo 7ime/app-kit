@@ -7,13 +7,13 @@ import AuthContainer from '@components/common/auth/auth-container'
 import AuthTitle from '@components/common/auth/auth-title'
 import AuthDescription from '@components/common/auth/auth-description'
 import AuthForm from '@components/common/auth/auth-form'
-import Input from '@components/ui/textfields/components/input'
 import Button from '@components/ui/buttons/components/button'
 import AuthFormSubmit from '@components/common/auth/auth-form-submit'
 import {useTranslation} from 'react-i18next'
 import {IFormInLocales} from '@models/form'
 import AuthFormRow from '@components/common/auth/auth-form-row'
 import InputPassword from '@components/ui/textfields/components/input-password'
+import Input from '@components/ui/textfield/components/input'
 
 interface IFieldsValues {
     email: string;
@@ -38,7 +38,7 @@ const AuthLogin = () => {
         control,
         errors,
         setValue,
-        formState
+        formState,
     } = useForm<IFieldsValues>({
         resolver: yupResolver(schema)
     })
