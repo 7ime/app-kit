@@ -17,6 +17,7 @@ const Input = (props: ITextField.InputProps) => {
         successMessage,
         parentClass,
         autoFocus,
+        type: externalType,
         InputProps: externalInputProps = {},
         onBlur,
         onFocus,
@@ -24,6 +25,11 @@ const Input = (props: ITextField.InputProps) => {
     } = props
 
     const [isFocused, setFocus] = React.useState(autoFocus)
+    const [type, setType] = React.useState(externalType ? externalType : 'text')
+
+    React.useEffect(() => {
+        externalType && setType(externalType)
+    }, [externalType])
 
     const handleFocus = React.useCallback((event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFocus(true)
@@ -39,6 +45,10 @@ const Input = (props: ITextField.InputProps) => {
         onReset && onReset()
     }, [onReset])
 
+    const handleChangePasswordType = React.useCallback(() => {
+        setType(type === 'password' ? 'text' : 'password')
+    }, [type])
+
     const classNames = classnames(
         css.textField,
         {[css.is_error]: error},
@@ -48,12 +58,20 @@ const Input = (props: ITextField.InputProps) => {
 
     const internalInputProps: InputBaseProps = {...externalInputProps}
 
-    if (isFocused && onReset) {
+    const showResetTrigger = !!onReset
+    const showPasswordTrigger =  externalType === 'password'
+
+    if (isFocused && (showResetTrigger || showPasswordTrigger)) {
         internalInputProps.endAdornment = (
             <InputAdornment position={'end'}>
                 <TextFieldTriggerContainer>
                     {
-                        onReset && <TextFieldTrigger type={'reset'} onClick={handleReset}/>
+                        showPasswordTrigger && (
+                            <TextFieldTrigger type={type === 'password' ? 'showPassword' : 'hidePassword'} onClick={handleChangePasswordType}/>
+                        )
+                    }
+                    {
+                        showResetTrigger && <TextFieldTrigger type={'reset'} onClick={handleReset}/>
                     }
                 </TextFieldTriggerContainer>
             </InputAdornment>
@@ -64,6 +82,7 @@ const Input = (props: ITextField.InputProps) => {
         <div className={classNames}>
             <TextField
                 {...otherProps}
+                type={type}
                 autoFocus={autoFocus}
                 onFocus={handleFocus}
                 onBlur={handleBlur}

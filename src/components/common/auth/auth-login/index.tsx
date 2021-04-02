@@ -12,7 +12,6 @@ import AuthFormSubmit from '@components/common/auth/auth-form-submit'
 import {useTranslation} from 'react-i18next'
 import {IFormInLocales} from '@models/form'
 import AuthFormRow from '@components/common/auth/auth-form-row'
-import InputPassword from '@components/ui/textfields/components/input-password'
 import Input from '@components/ui/textfield/components/input'
 
 interface IFieldsValues {
@@ -78,7 +77,8 @@ const AuthLogin = () => {
                             control={control}
                             defaultValue={''}
                             render={({ onChange, value }) => (
-                                <InputPassword
+                                <Input
+                                    type={'password'}
                                     onChange={onChange}
                                     value={value}
                                     label={fields.password.label}
