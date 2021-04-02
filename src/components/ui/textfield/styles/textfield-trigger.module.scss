@@ -1,0 +1,41 @@
+@import "~@styles/variables/colors.module.scss";
+@import "~@styles/variables/shared.module.scss";
+
+.triggers {
+    display: flex;
+    margin-left: 3px;
+
+    &:empty {
+        margin: 0;
+    }
+}
+
+.trigger {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    opacity: 0.2;
+    transition: opacity $transition;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &.reset {
+        background-image: url('~@images/icons/x.svg');
+    }
+
+    &.showPassword {
+        background-size: 15px;
+        background-image: url('~@images/icons/eye.svg');
+    }
+
+    &.hidePassword {
+        background-size: 15px;
+        background-image: url('~@images/icons/eye-off.svg');
+    }
+}
+

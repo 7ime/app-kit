@@ -1,11 +1,14 @@
 import * as React from 'react'
 import classnames from 'classnames'
-import {TextField} from '@material-ui/core'
-import {ITextfield} from '../../model'
+import InputAdornment from '@material-ui/core/InputAdornment'
+import {ITextField} from '../../model'
 import css from '../../styles/textfield.module.scss'
 import ValidationMessage from '@components/ui/validation-message/components/validation-message'
+import {InputBaseProps, TextField} from '@material-ui/core'
+import TextFieldTriggerContainer from '@components/ui/textfield/components/textfield-trigger-container'
+import TextFieldTrigger from '@components/ui/textfield/components/textfield-trigger'
 
-const Input = (props: ITextfield.InputProps) => {
+const Input = (props: ITextField.InputProps) => {
     const {
         onReset,
         error,
@@ -13,24 +16,58 @@ const Input = (props: ITextfield.InputProps) => {
         errorMessage,
         successMessage,
         parentClass,
+        autoFocus,
+        InputProps: externalInputProps = {},
+        onBlur,
+        onFocus,
         ...otherProps
     } = props
 
-    const classNames = classnames(
-        css.textfield,
-        {[css.is_error]: error},
-        {[css.is_success]: success},
-        parentClass,
-    )
+    const [isFocused, setFocus] = React.useState(autoFocus)
+
+    const handleFocus = React.useCallback((event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFocus(true)
+        onFocus && onFocus(event)
+    }, [onFocus])
+
+    const handleBlur = React.useCallback((event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFocus(false)
+        onBlur && onBlur(event)
+    }, [onBlur])
 
     const handleReset = React.useCallback(() => {
         onReset && onReset()
     }, [onReset])
 
+    const classNames = classnames(
+        css.textField,
+        {[css.is_error]: error},
+        {[css.is_success]: success},
+        parentClass,
+    )
+
+    const internalInputProps: InputBaseProps = {...externalInputProps}
+
+    if (isFocused && onReset) {
+        internalInputProps.endAdornment = (
+            <InputAdornment position={'end'}>
+                <TextFieldTriggerContainer>
+                    {
+                        onReset && <TextFieldTrigger type={'reset'} onClick={handleReset}/>
+                    }
+                </TextFieldTriggerContainer>
+            </InputAdornment>
+        )
+    }
+
     return (
         <div className={classNames}>
             <TextField
                 {...otherProps}
+                autoFocus={autoFocus}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                InputProps={internalInputProps}
             />
 
             {success && successMessage && (
