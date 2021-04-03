@@ -8,5 +8,6 @@ export const i18nResources: II18nResources = {
         [EI18nNameSpaces.login]: require('../locales/en/login.json'),
         [EI18nNameSpaces.loginByPhone]: require('../locales/en/loginByPhone.json'),
         [EI18nNameSpaces.countries]: require('../locales/en/countries.json'),
+        [EI18nNameSpaces.registration]: require('../locales/en/registration.json'),
     }
 }

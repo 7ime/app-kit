@@ -1,0 +1,46 @@
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
+
+.authRegistration {
+    .description {
+        margin: 15px 0 25px;
+    }
+
+    .form {
+        margin-top: 30px;
+    }
+
+    .submit {
+        margin-top: 40px;
+    }
+
+    .alert {
+        margin-bottom: 10px;
+
+        .alertContent {
+            position: relative;
+        }
+
+        .alertMessage {
+            padding-left: 35px;
+        }
+
+        .alertIcon {
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 20px;
+            height: 30px;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+
+            &.info {
+                background-image: url('~@images/icons/lock.svg');
+            }
+
+            &.success {
+                background-image: url('~@images/icons/check.svg');
+            }
+        }
+    }
+}

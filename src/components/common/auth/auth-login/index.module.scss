@@ -3,14 +3,21 @@
 
 .authLogin {
     width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
 
     .description {
         margin: 15px 0 30px;
+        max-width: 300px;
+    }
+
+    .form {
+        margin-top: 30px;
     }
 
     .submit {
-        margin-top: 35px;
+        margin-top: 40px;
+    }
+
+    .alert {
+        margin-bottom: 10px;
     }
 }

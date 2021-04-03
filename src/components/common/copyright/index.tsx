@@ -15,7 +15,7 @@ const Copyright = ({ parentClass }: IProps) => {
 
     return (
         <div className={classNames}>
-            Startup preset. Free access
+            App kit. Free access
         </div>
     )
 }

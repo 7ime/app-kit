@@ -1,4 +1,4 @@
-export type IFormValidationRules = 'required' | 'email' | 'min'
+export type IFormValidationRules = 'required' | 'email' | 'min' | 'confirm'
 
 export type IFormFieldsInLocales<T> = Record<keyof T, {
     label: string;

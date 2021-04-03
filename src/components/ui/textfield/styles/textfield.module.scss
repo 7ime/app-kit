@@ -69,6 +69,10 @@
         margin-left: 0;
     }
 
+    :global(.MuiInputAdornment-positionStart) {
+        margin-right: 0;
+    }
+
     .validationMessage {
         margin-top: 0.5rem;
     }

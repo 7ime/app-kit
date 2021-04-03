@@ -11,6 +11,10 @@ export default class Routes {
         static root = () => '/login-by-phone'
     }
 
+    static registration = class {
+        static root = () => '/registration'
+    }
+
     static restApi = class {
         static root = () => '/rest-api'
     }

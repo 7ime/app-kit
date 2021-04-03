@@ -1,0 +1,49 @@
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
+
+.alert {
+    position: relative;
+    border-radius: 7px;
+    padding: 20px 47px 20px 15px;
+    border: 1px solid transparent;
+    transition: 3s ease-in-out;
+    overflow: hidden;
+
+    &.info {
+        border-color: $grey_30;
+        background-color: $grey_10;
+    }
+
+    &.success {
+        border-color: $green_20;
+        background-color: $green_10;
+    }
+
+    &.error {
+        border-color: $red_20;
+        background-color: $red_10;
+    }
+
+    &.warning {
+        border-color: $yellow_20;
+        background-color: $yellow_10;
+    }
+
+    .close {
+        cursor: pointer;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 16px;
+        right: 11px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-image: url('~@images/icons/x.svg');
+        opacity: 0.2;
+        transition: $transition;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

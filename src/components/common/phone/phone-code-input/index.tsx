@@ -1,8 +1,9 @@
 import * as React from 'react'
+import InputAdornment from '@material-ui/core/InputAdornment'
 import classnames from 'classnames'
 import css from './index.module.scss'
 import {IParentClass} from '@models/shared'
-import InputNumber from '@components/ui/textfields/components/input-number'
+import Input from '@components/ui/textfield/components/input'
 
 interface IProps extends IParentClass {}
 
@@ -18,7 +19,19 @@ const PhoneCode = (props: IProps) => {
 
     return (
         <div className={classNames}>
-            <InputNumber label={'Code'} />
+            <Input
+                label={'Code'}
+                inputProps={{
+                    maxLength: 3
+                }}
+                InputProps={{
+                    startAdornment: (
+                        <InputAdornment position={'start'}>
+                            <div className={css.sign}>+</div>
+                        </InputAdornment>
+                    )
+                }}
+            />
         </div>
     )
 }

@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import classnames from 'classnames'
 import css from './index.module.scss'
 import AuthContainer from '@components/common/auth/auth-container'
 import AuthTitle from '@components/common/auth/auth-title'
@@ -18,21 +19,25 @@ import Alert from '@components/ui/alert/components/alert'
 interface IFieldsValues {
     email: string;
     password: string;
+    password2: string;
 }
 
-const AuthLogin = () => {
-    const {t} = useTranslation('login')
-
-    const [showErrorAlert, setShowErrorAlert] = React.useState(false)
+const AuthRegistration = () => {
+    const {t} = useTranslation('registration')
 
     const {
         fields,
         submit
-    } = t<IFormInLocales<IFieldsValues>>('login:form', { returnObjects: true })
+    } = t<IFormInLocales<IFieldsValues>>('registration:form', { returnObjects: true })
+
+    const [showInfoAlert, setShowInfoAlert] = React.useState(true)
+    const [showSuccessAlert, setShowSuccessAlert] = React.useState(false)
+
 
     const schema = yup.object().shape({
         email: yup.string().required(fields.email.errors?.required).email(fields.email.errors?.email),
         password: yup.string().required(fields.password.errors?.required).min(8, fields.password.errors?.min),
+        password2: yup.string().required(fields.password2.errors?.required).oneOf([yup.ref('password')], fields.password2.errors?.confirm),
     })
 
     const {
@@ -47,23 +52,41 @@ const AuthLogin = () => {
 
     const handleSubmitAfterValidation = React.useCallback((data: IFieldsValues) => {
         console.log(data)
-        setShowErrorAlert(true)
+        setShowSuccessAlert(true)
     }, [])
 
     return (
-        <div className={css.authLogin}>
+        <div className={css.authRegistration}>
+
             <AuthContainer>
-                <AuthTitle>{t('login:title')}</AuthTitle>
-                <AuthDescription parentClass={css.description}>{t('login:description')}</AuthDescription>
+                <AuthTitle>{t('registration:title')}</AuthTitle>
+                <AuthDescription parentClass={css.description}>{t('registration:description')}</AuthDescription>
 
                 {
-                    showErrorAlert && (
+                    showInfoAlert && (
                         <Alert
-                            type={'error'}
-                            onClose={() => setShowErrorAlert(false)}
+                            onClose={() => setShowInfoAlert(false)}
                             parentClass={css.alert}
                         >
-                            {t('login:alert.error')}
+                            <div className={css.alertContent}>
+                                <div className={classnames(css.alertIcon, css.info)} />
+                                <div className={css.alertMessage}>{t('registration:alert.info')}</div>
+                            </div>
+                        </Alert>
+                    )
+                }
+
+                {
+                    showSuccessAlert && (
+                        <Alert
+                            type={'success'}
+                            onClose={() => setShowSuccessAlert(false)}
+                            parentClass={css.alert}
+                        >
+                            <div className={css.alertContent}>
+                                <div className={classnames(css.alertIcon, css.success)} />
+                                <div className={css.alertMessage}>{t('registration:alert.success')}</div>
+                            </div>
                         </Alert>
                     )
                 }
@@ -106,6 +129,25 @@ const AuthLogin = () => {
                         />
                     </AuthFormRow>
 
+                    <AuthFormRow>
+                        <Controller
+                            name={fields.password2.name}
+                            control={control}
+                            defaultValue={''}
+                            render={({ onChange, value }) => (
+                                <Input
+                                    type={'password'}
+                                    onChange={onChange}
+                                    value={value}
+                                    label={fields.password2.label}
+                                    error={!!errors.password2}
+                                    errorMessage={errors.password2?.message}
+                                    onReset={() => setValue('password2', '', { shouldValidate: formState.isSubmitted })}
+                                />
+                            )}
+                        />
+                    </AuthFormRow>
+
                     <AuthFormSubmit parentClass={css.submit}>
                         <Button type={'primary'} htmlType={'submit'} fill={'solid'}>{submit}</Button>
                     </AuthFormSubmit>
@@ -115,4 +157,4 @@ const AuthLogin = () => {
     )
 }
 
-export default AuthLogin
+export default AuthRegistration
