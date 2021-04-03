@@ -3,26 +3,50 @@
 
 .authLoginByPhone {
     width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
 
     .description {
         margin: 15px 0 30px;
     }
 
     .submit {
-        margin-top: 35px;
+        margin-top: 40px;
     }
 
     .phone {
         display: flex;
 
         .code {
-
+            margin-right: 20px;
         }
 
         .number {
             flex: 1;
+        }
+    }
+
+    .alert {
+        margin-bottom: 10px;
+
+        .alertContent {
+            position: relative;
+        }
+
+        .alertMessage {
+            padding-left: 35px;
+        }
+
+        .alertIcon {
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 20px;
+            height: 30px;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+
+            &.success {
+                background-image: url('~@images/icons/check.svg');
+            }
         }
     }
 }

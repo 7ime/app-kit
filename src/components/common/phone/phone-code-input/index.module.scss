@@ -2,10 +2,11 @@
 @import '~@styles/variables/shared.module.scss';
 
 .phoneCode {
-    max-width: 45px;
+    max-width: 55px;
 
     .sign {
-        padding-top: 2px;
+        padding-top: 1px;
+        margin-right: 3px;
         font-size: 16px;
     }
 }

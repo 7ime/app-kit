@@ -12,13 +12,14 @@
 
     :global(.MuiFormLabel-root) {
         font-family: $font;
-        font-size: 13px;
+        font-size: 16px;
         color: $grey;
         transition: 0.15s ease-in-out;
+        transform: translate(0, 32px) scale(1);
 
         &:global(.Mui-focused), &:global(.MuiInputLabel-shrink) {
             color: $grey;
-            transform: translate(0, 1.5px);
+            transform: translate(0, 1.5px) scale(0.8);
         }
     }
 
@@ -62,7 +63,7 @@
         white-space: nowrap;
         overflow: hidden;
         padding: 10px 0 8px;
-        font-size: 13px;
+        font-size: 18px;
     }
 
     :global(.MuiInputAdornment-positionEnd) {

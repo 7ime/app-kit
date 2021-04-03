@@ -1,5 +1,31 @@
 {
     "pageTitle": "Sign in by phone",
     "title": "Sign in",
-    "description": "Please choose your country and enter your full phone number."
+    "description": "Please choose your country and enter your full phone number.",
+    "alert": {
+        "success": "Wait for an SMS with the code to come to your phone"
+    },
+    "form": {
+        "fields": {
+            "countryCode": {
+                "label": "Country",
+                "name": "countryCode",
+                "errors": {
+                    "required": "This field is required"
+                }
+            },
+            "phoneCode": {
+                "label": "Code",
+                "name": "phoneCode"
+            },
+            "phoneNumber": {
+                "label": "Phone number",
+                "name": "phoneNumber",
+                "errors": {
+                    "required": "This field is required"
+                }
+            }
+        },
+        "submit": "Submit"
+    }
 }

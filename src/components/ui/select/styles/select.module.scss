@@ -3,25 +3,26 @@
 
 .select {
     position: relative;
-    padding-top: 17px;
+    padding-top: 24px;
 
     .label {
         font-family: $font;
-        font-size: 13px;
+        font-size: 16px;
         background-color: #fff;
         padding: 0;
         color: $grey;
         z-index: 2;
         transition: 0.15s ease-in-out;
         pointer-events: none;
-        transform: translateY(25px);
+        transform: translate(0, 32px) scale(1);
+        transform-origin: top left;
         position: absolute;
         top: 0;
         left: 0;
     }
 
     &.selected .label, &.focused .label {
-        transform: translateY(0);
+        transform: translate(0, 1.5px) scale(0.8);
     }
 
     :global(.Select__control) {
@@ -67,8 +68,8 @@
     :global(.Select__value-container) {
         font-family: $font;
         font-weight: normal;
-        font-size: 13px;
-        padding: 10px 0 6px;
+        font-size: 18px;
+        padding: 5px 0;
         margin: 0;
 
         > div {
@@ -80,7 +81,6 @@
     :global(.Select__input) {
         line-height: 1;
         position: relative;
-        top: -2px;
     }
 
     :global(.Select__single-value) {
@@ -127,5 +127,6 @@
     :global(.Select__option--is-selected),
     :global(.Select__option--is-active) {
         background-color: $grey_20;
+        color: $black;
     }
 }

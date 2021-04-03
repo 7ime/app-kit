@@ -31,12 +31,12 @@ const Input = (props: ITextField.InputProps) => {
         externalType && setType(externalType)
     }, [externalType])
 
-    const handleFocus = React.useCallback((event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleFocus = React.useCallback((event: React.FocusEvent<HTMLInputElement>) => {
         setFocus(true)
         onFocus && onFocus(event)
     }, [onFocus])
 
-    const handleBlur = React.useCallback((event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleBlur = React.useCallback((event: React.FocusEvent<HTMLInputElement>) => {
         setFocus(false)
         onBlur && onBlur(event)
     }, [onBlur])
