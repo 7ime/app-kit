@@ -3,7 +3,7 @@
 
 .select {
     position: relative;
-    padding-top: 24px;
+    padding-top: 21.38px;
 
     .label {
         font-family: $font;
@@ -14,7 +14,7 @@
         z-index: 2;
         transition: 0.15s ease-in-out;
         pointer-events: none;
-        transform: translate(0, 32px) scale(1);
+        transform: translate(0, 29px) scale(1);
         transform-origin: top left;
         position: absolute;
         top: 0;
@@ -22,7 +22,7 @@
     }
 
     &.selected .label, &.focused .label {
-        transform: translate(0, 1.5px) scale(0.8);
+        transform: translate(0, -1px) scale(0.8);
     }
 
     :global(.Select__control) {
