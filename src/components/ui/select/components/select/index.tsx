@@ -3,6 +3,7 @@ import classnames from 'classnames'
 import ReactSelect from 'react-select'
 import css from '../../styles/select.module.scss'
 import ISelect from '../../model'
+import ValidationMessage from '@components/ui/validation-message/components/validation-message'
 
 const Select = (props: ISelect.Props) => {
     const {
@@ -12,7 +13,11 @@ const Select = (props: ISelect.Props) => {
         options,
         parentClass,
         value: externalValue,
-        components
+        components,
+        success,
+        successMessage,
+        error,
+        errorMessage
     } = props
 
     const [value, setValue] = React.useState<ISelect.Option | null>(externalValue ? externalValue : null)
@@ -29,8 +34,10 @@ const Select = (props: ISelect.Props) => {
 
     const classNames = classnames(
         css.select,
-        {[css.selected]: !!value},
-        {[css.focused]: focused},
+        {[css.is_selected]: !!value},
+        {[css.is_focused]: focused},
+        {[css.is_error]: error},
+        {[css.is_success]: success},
         parentClass
     )
 
@@ -48,6 +55,14 @@ const Select = (props: ISelect.Props) => {
                 onMenuOpen={() => setFocused(true)}
                 onMenuClose={() => setFocused(false)}
             />
+
+            {success && successMessage && (
+                <ValidationMessage type={'success'} parentClass={css.validationMessage}>{successMessage}</ValidationMessage>
+            )}
+
+            {error && errorMessage && (
+                <ValidationMessage type={'error'} parentClass={css.validationMessage}>{errorMessage}</ValidationMessage>
+            )}
         </div>
     )
 }

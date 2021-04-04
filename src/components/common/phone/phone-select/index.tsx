@@ -9,8 +9,9 @@ import {IParentClass} from '@models/shared'
 import PhoneSelectValueContainer from '@components/common/phone/phone-select-value-container'
 import ISelect from '@components/ui/select/model'
 import {IPhoneNumber} from '@modules/phone-number/model'
+import {IFieldValidationStatus} from '@models/field-validation-status'
 
-interface IProps extends IParentClass {
+interface IProps extends IParentClass, IFieldValidationStatus {
     label: string
     name: string
     countryCode: IPhoneNumber.CountryCode | null
@@ -31,7 +32,11 @@ const PhoneSelect = (props: IProps) => {
         name,
         parentClass,
         onChange,
-        countryCode
+        countryCode,
+        success,
+        successMessage,
+        error,
+        errorMessage
     } = props
 
     const {t} = useTranslation()
@@ -57,6 +62,10 @@ const PhoneSelect = (props: IProps) => {
                     onChange={onChange}
                     options={countriesOptions}
                     components={{Option: PhoneSelectOption, ValueContainer: PhoneSelectValueContainer}}
+                    error={error}
+                    errorMessage={errorMessage}
+                    success={success}
+                    successMessage={successMessage}
             />
         </div>
     )

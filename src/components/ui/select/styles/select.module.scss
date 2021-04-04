@@ -21,7 +21,7 @@
         left: 0;
     }
 
-    &.selected .label, &.focused .label {
+    &.is_selected .label, &.is_focused .label {
         transform: translate(0, -1px) scale(0.8);
     }
 
@@ -51,8 +51,23 @@
         }
     }
 
-    &.focused :global(.Select__control) {
+    &.is_focused :global(.Select__control) {
         &:before {
+            opacity: 1;
+        }
+    }
+
+
+    &.is_success :global(.Select__control) {
+        &:before {
+            background-color: $success;
+            opacity: 1;
+        }
+    }
+
+    &.is_error :global(.Select__control) {
+        &:before {
+            background-color: $error;
             opacity: 1;
         }
     }
@@ -113,6 +128,7 @@
         z-index: 100;
         border: 1px solid $border_color;
         box-shadow: 0 1px 10px rgba($black, 0.02);
+        margin-top: 5px;
     }
 
     :global(.Select__option) {
@@ -128,5 +144,9 @@
     :global(.Select__option--is-active) {
         background-color: $grey_20;
         color: $black;
+    }
+
+    .validationMessage {
+        margin-top: 0.5rem;
     }
 }

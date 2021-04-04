@@ -1,5 +1,6 @@
-import {IParentClass} from '@models/shared'
 import {NamedProps} from 'react-select/src/Select'
+import {IParentClass} from '@models/shared'
+import {IFieldValidationStatus} from '@models/field-validation-status'
 
 namespace ISelect {
     export interface Option {
@@ -7,13 +8,14 @@ namespace ISelect {
         label: string
     }
 
-    export interface Props extends IParentClass {
+    export interface Props extends IFieldValidationStatus, IParentClass {
         label: string
         name: string
         options: Option[]
         value?: Option | null
-        onChange?(option: Option | null): unknown
         components?: NamedProps['components']
+
+        onChange?(option: Option | null): unknown
     }
 }
 
