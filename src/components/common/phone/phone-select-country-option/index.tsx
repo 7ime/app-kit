@@ -5,7 +5,7 @@ import {SelectComponents} from 'react-select/src/components'
 import ISelect from '@components/ui/select/model'
 import phoneNumber from '@modules/phone-number'
 
-const PhoneSelectOption: SelectComponents<ISelect.Option, false>['Option'] = (props) => {
+const PhoneSelectCountryOption: SelectComponents<ISelect.Option, false>['Option'] = (props) => {
     const {
         innerProps,
         data,
@@ -16,9 +16,9 @@ const PhoneSelectOption: SelectComponents<ISelect.Option, false>['Option'] = (pr
     const code = React.useMemo(() => phoneNumber.getCountryCallingCode(data.value), [])
 
     const classNames = classnames(
-        css.phoneSelectOption,
-        {[css.isFocused]: isFocused},
-        {[css.isSelected]: isSelected},
+        css.phoneSelectCountryOption,
+        {[css.is_focused]: isFocused},
+        {[css.is_selected]: isSelected},
     )
 
     return (
@@ -29,4 +29,4 @@ const PhoneSelectOption: SelectComponents<ISelect.Option, false>['Option'] = (pr
     )
 }
 
-export default PhoneSelectOption
+export default PhoneSelectCountryOption

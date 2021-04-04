@@ -7,7 +7,6 @@ import AuthContainer from '@components/common/auth/auth-container'
 import AuthTitle from '@components/common/auth/auth-title'
 import AuthDescription from '@components/common/auth/auth-description'
 import {useTranslation} from 'react-i18next'
-import PhoneSelect from '@components/common/phone/phone-select'
 import AuthForm from '@components/common/auth/auth-form'
 import AuthFormRow from '@components/common/auth/auth-form-row'
 import AuthFormSubmit from '@components/common/auth/auth-form-submit'
@@ -20,6 +19,7 @@ import ISelect from '@components/ui/select/model'
 import phoneNumber from '@modules/phone-number'
 import {IPhoneNumber} from '@modules/phone-number/model'
 import PhoneCallingCode from '@components/common/phone/phone-calling-code'
+import PhoneSelectCountry from '@components/common/phone/phone-select-country'
 
 interface IFieldsValues {
     countryCode: string;
@@ -105,7 +105,7 @@ const AuthLoginByPhone = () => {
 
                 <AuthForm onSubmit={handleSubmit(handleSubmitAfterValidation)}>
                     <AuthFormRow>
-                        <PhoneSelect
+                        <PhoneSelectCountry
                             label={fields.countryCode.label}
                             name={fields.countryCode.name}
                             onChange={handleChangeCountries}

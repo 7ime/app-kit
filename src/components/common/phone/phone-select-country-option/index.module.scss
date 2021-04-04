@@ -1,18 +1,18 @@
 @import '~@styles/variables/colors.module.scss';
 @import '~@styles/variables/shared.module.scss';
 
-.phoneSelectOption {
+.phoneSelectCountryOption {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 5px 10px;
     font-size: 13px;
 
-    &.isFocused {
+    &.is_focused {
         background-color: $grey_20;
     }
 
-    &.isSelected {
+    &.is_selected {
         background-color: $grey_20
     }
 

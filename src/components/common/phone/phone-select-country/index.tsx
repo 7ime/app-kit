@@ -4,13 +4,13 @@ import {useTranslation} from 'react-i18next'
 import css from './index.module.scss'
 import {transformCountriesToSelectOptions} from '@helpers/select-options/transform-countries-to-select-options'
 import Select from '@components/ui/select/components/select'
-import PhoneSelectOption from '@components/common/phone/phone-select-option'
 import {IParentClass} from '@models/shared'
-import PhoneSelectValueContainer from '@components/common/phone/phone-select-value-container'
 import ISelect from '@components/ui/select/model'
 import {IPhoneNumber} from '@modules/phone-number/model'
 import {IFieldValidationStatus} from '@models/field-validation-status'
 import {sortByAlphaOrder} from '@helpers/sorts/sort-by-alpha-order'
+import PhoneSelectCountryOption from '@components/common/phone/phone-select-country-option'
+import PhoneSelectCountryValueContainer from '@components/common/phone/phone-select-country-value-container'
 
 interface IProps extends IFieldValidationStatus, IParentClass {
     label: string
@@ -19,7 +19,7 @@ interface IProps extends IFieldValidationStatus, IParentClass {
     onChange(option: ISelect.Option | null): void
 }
 
-const PhoneSelect = (props: IProps) => {
+const PhoneSelectCountry = (props: IProps) => {
     const {
         label,
         name,
@@ -40,7 +40,7 @@ const PhoneSelect = (props: IProps) => {
     }, [])
 
     const classNames = classnames(
-        css.phoneSelect,
+        css.phoneSelectCountry,
         parentClass
     )
 
@@ -55,10 +55,10 @@ const PhoneSelect = (props: IProps) => {
                     errorMessage={errorMessage}
                     success={success}
                     successMessage={successMessage}
-                    components={{Option: PhoneSelectOption, ValueContainer: PhoneSelectValueContainer}}
+                    components={{Option: PhoneSelectCountryOption, ValueContainer: PhoneSelectCountryValueContainer}}
             />
         </div>
     )
 }
 
-export default PhoneSelect
+export default PhoneSelectCountry

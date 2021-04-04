@@ -20,14 +20,14 @@ const getElemFlag = ({value, label}: ISelect.Option) => {
     )
 }
 
-const PhoneSelectValueContainer: SelectComponents<ISelect.Option, false>['ValueContainer'] = (props) => {
+const PhoneSelectCountryValueContainer: SelectComponents<ISelect.Option, false>['ValueContainer'] = (props) => {
     const {
         selectProps: {value},
         children
     } = props
 
     const classNames = classnames(
-        css.phoneSelectValueContainer,
+        css.phoneSelectCountryValueContainer,
         {[css.withValue]: !!value},
     )
 
@@ -39,4 +39,4 @@ const PhoneSelectValueContainer: SelectComponents<ISelect.Option, false>['ValueC
     )
 }
 
-export default PhoneSelectValueContainer
+export default PhoneSelectCountryValueContainer
