@@ -7,12 +7,14 @@ import {IParentClass} from '@models/shared'
 import Input from '@components/ui/textfield/components/input'
 
 interface IProps extends IParentClass {
+    label: string
     value: string
     onChange(event: React.ChangeEvent<HTMLInputElement>): void
 }
 
-const PhoneCode = (props: IProps) => {
+const PhoneCallingCode = (props: IProps) => {
     const {
+        label,
         value,
         onChange,
         parentClass
@@ -31,7 +33,7 @@ const PhoneCode = (props: IProps) => {
     }
 
     const classNames = classnames(
-        css.phoneCode,
+        css.phoneCallingCode,
         parentClass
     )
 
@@ -42,14 +44,14 @@ const PhoneCode = (props: IProps) => {
                 onChange={onChange}
                 onFocus={() => setFocus(true)}
                 onBlur={() => setFocus(false)}
-                label={'Code'}
+                label={label}
+                InputProps={InputProps}
                 inputProps={{
                     maxLength: 3
                 }}
-                InputProps={InputProps}
             />
         </div>
     )
 }
 
-export default PhoneCode
+export default PhoneCallingCode

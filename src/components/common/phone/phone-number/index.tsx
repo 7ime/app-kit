@@ -4,17 +4,24 @@ import NumberFormat from 'react-number-format'
 import css from './index.module.scss'
 import {IParentClass} from '@models/shared'
 import Input from '@components/ui/textfield/components/input'
+import {IFieldValidationStatus} from '@models/field-validation-status'
 import {IPhoneNumber} from '@modules/phone-number/model'
 import phoneNumber from '@modules/phone-number'
 
-interface IProps extends IParentClass {
+interface IProps extends IFieldValidationStatus, IParentClass {
     countryCode: IPhoneNumber.CountryCode | null
+    label: string
 }
 
 const PhoneNumber = (props: IProps) => {
     const {
-        parentClass,
         countryCode,
+        label,
+        success,
+        successMessage,
+        error,
+        errorMessage,
+        parentClass,
     } = props
 
     const classNames = classnames(
@@ -29,12 +36,16 @@ const PhoneNumber = (props: IProps) => {
     return (
         <div className={classNames}>
             <NumberFormat
+                label={label}
                 onFocus={() => setFocus(true)}
                 onBlur={() => setFocus(false)}
+                success={success}
+                successMessage={successMessage}
+                error={error}
+                errorMessage={errorMessage}
                 allowEmptyFormatting={isFocused}
                 autoComplete="off"
                 type="tel"
-                label={'Phone number'}
                 customInput={Input}
                 format={format}
                 mask="-"

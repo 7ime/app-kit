@@ -12,10 +12,10 @@ import {IPhoneNumber} from '@modules/phone-number/model'
 import {IFieldValidationStatus} from '@models/field-validation-status'
 import {sortByAlphaOrder} from '@helpers/sorts/sort-by-alpha-order'
 
-interface IProps extends IParentClass, IFieldValidationStatus {
+interface IProps extends IFieldValidationStatus, IParentClass {
     label: string
     name: string
-    countryCode: IPhoneNumber.CountryCode | null
+    value: IPhoneNumber.CountryCode | null
     onChange(option: ISelect.Option | null): void
 }
 
@@ -25,7 +25,7 @@ const PhoneSelect = (props: IProps) => {
         name,
         parentClass,
         onChange,
-        countryCode,
+        value,
         success,
         successMessage,
         error,
@@ -33,6 +33,7 @@ const PhoneSelect = (props: IProps) => {
     } = props
 
     const {t} = useTranslation()
+
     const countries = t<Record<string, string>>('countries:data', { returnObjects: true })
     const countriesOptions = React.useMemo(() => {
         return sortByAlphaOrder(transformCountriesToSelectOptions(countries), 'label')
@@ -47,14 +48,14 @@ const PhoneSelect = (props: IProps) => {
         <div className={classNames}>
             <Select label={label}
                     name={name}
-                    value={countryCode}
+                    value={value}
                     onChange={onChange}
                     options={countriesOptions}
-                    components={{Option: PhoneSelectOption, ValueContainer: PhoneSelectValueContainer}}
                     error={error}
                     errorMessage={errorMessage}
                     success={success}
                     successMessage={successMessage}
+                    components={{Option: PhoneSelectOption, ValueContainer: PhoneSelectValueContainer}}
             />
         </div>
     )

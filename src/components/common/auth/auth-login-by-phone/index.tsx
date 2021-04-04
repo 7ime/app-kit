@@ -12,7 +12,6 @@ import AuthForm from '@components/common/auth/auth-form'
 import AuthFormRow from '@components/common/auth/auth-form-row'
 import AuthFormSubmit from '@components/common/auth/auth-form-submit'
 import Button from '@components/ui/buttons/components/button'
-import PhoneCode from '@components/common/phone/phone-code-input'
 import {IFormInLocales} from '@models/form'
 import Alert from '@components/ui/alert/components/alert'
 import classnames from 'classnames'
@@ -20,10 +19,11 @@ import PhoneNumber from '@components/common/phone/phone-number'
 import ISelect from '@components/ui/select/model'
 import phoneNumber from '@modules/phone-number'
 import {IPhoneNumber} from '@modules/phone-number/model'
+import PhoneCallingCode from '@components/common/phone/phone-calling-code'
 
 interface IFieldsValues {
     countryCode: string;
-    phoneCode: string;
+    phoneCallingCode: string;
     phoneNumber: string;
 }
 
@@ -39,7 +39,7 @@ const AuthLoginByPhone = () => {
 
     const schema = yup.object().shape({
         countryCode: yup.string().required(fields.countryCode.errors?.required),
-        phoneCode: yup.string(),
+        phoneCallingCode: yup.string(),
         phoneNumber: yup.string().required(fields.phoneNumber.errors?.required),
     })
 
@@ -54,7 +54,7 @@ const AuthLoginByPhone = () => {
     })
 
     const [countryCode, setCountryCode] = React.useState<IPhoneNumber.CountryCode | null>(null)
-    const [phoneCode, setPhoneCode] = React.useState('')
+    const [phoneCallingCode, setPhoneCallingCode] = React.useState('')
 
     const handleChangeCountries = (option: ISelect.Option | null) => {
         if (option) {
@@ -62,10 +62,10 @@ const AuthLoginByPhone = () => {
             const newCallingCode = phoneNumber.getCountryCallingCode(newCountryCode)
 
             setCountryCode(newCountryCode)
-            setPhoneCode(newCallingCode ? newCallingCode : '')
+            setPhoneCallingCode(newCallingCode ? newCallingCode : '')
         } else {
             setCountryCode(null)
-            setPhoneCode('')
+            setPhoneCallingCode('')
         }
     }
 
@@ -73,7 +73,7 @@ const AuthLoginByPhone = () => {
         const newCallingCode = event.target.value
         const newCountryCode = phoneNumber.getCountryCodeByCallingCode(newCallingCode)
 
-        setPhoneCode(newCallingCode)
+        setPhoneCallingCode(newCallingCode)
         setCountryCode(newCountryCode)
     }
 
@@ -106,24 +106,28 @@ const AuthLoginByPhone = () => {
                 <AuthForm onSubmit={handleSubmit(handleSubmitAfterValidation)}>
                     <AuthFormRow>
                         <PhoneSelect
-                            label={'Country'}
-                            name={'country'}
+                            label={fields.countryCode.label}
+                            name={fields.countryCode.name}
                             onChange={handleChangeCountries}
-                            countryCode={countryCode}
+                            value={countryCode}
                         />
                     </AuthFormRow>
 
                     <AuthFormRow>
                         <div className={css.phone}>
                             <div className={css.code}>
-                                <PhoneCode
-                                    value={phoneCode}
+                                <PhoneCallingCode
+                                    label={fields.phoneCallingCode.label}
+                                    value={phoneCallingCode}
                                     onChange={handleChangePhoneCode}
                                 />
                             </div>
 
                             <div className={css.number}>
-                                <PhoneNumber countryCode={countryCode} />
+                                <PhoneNumber
+                                    label={fields.phoneNumber.label}
+                                    countryCode={countryCode}
+                                />
                             </div>
                         </div>
                     </AuthFormRow>

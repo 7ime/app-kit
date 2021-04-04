@@ -14,9 +14,9 @@
                     "required": "This field is required"
                 }
             },
-            "phoneCode": {
+            "phoneCallingCode": {
                 "label": "Code",
-                "name": "phoneCode"
+                "name": "phoneCallingCode"
             },
             "phoneNumber": {
                 "label": "Phone number",
