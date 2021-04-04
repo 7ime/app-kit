@@ -111,7 +111,7 @@ const AuthLoginByPhone = () => {
                     )
                 }
 
-                <AuthForm onSubmit={handleSubmit(handleSubmitAfterValidation)}>
+                <AuthForm onSubmit={handleSubmit(handleSubmitAfterValidation)} parentClass={css.form}>
                     <AuthFormRow>
                         <PhoneSelectCountry
                             label={fields.countryCode.label}
