@@ -37,11 +37,13 @@ const AuthLoginByPhone = () => {
     } = t<IFormInLocales<IFieldsValues>>('loginByPhone:form', { returnObjects: true })
 
     const [showSuccessAlert, setShowSuccessAlert] = React.useState(false)
+    const [countryCode, setCountryCode] = React.useState<IPhoneNumber.CountryCode | null>(null)
+    const [phoneCallingCode, setPhoneCallingCode] = React.useState('')
 
     const schema = yup.object().shape({
         countryCode: yup.string().required(fields.countryCode.errors?.required),
         phoneCallingCode: yup.string(),
-        phoneNumber: yup.string().required(fields.phoneNumber.errors?.required),
+        phoneNumber: yup.string().required(fields.phoneNumber.errors?.required)
     })
 
     const {
@@ -58,9 +60,6 @@ const AuthLoginByPhone = () => {
         register({ name: 'countryCode' })
         register({ name: 'phoneNumber' })
     }, [register])
-
-    const [countryCode, setCountryCode] = React.useState<IPhoneNumber.CountryCode | null>(null)
-    const [phoneCallingCode, setPhoneCallingCode] = React.useState('')
 
     const handleChangeCountries = (option: ISelect.Option | null) => {
         const newCountryCode: IPhoneNumber.CountryCode | null = option ? option.value as IPhoneNumber.CountryCode : null

@@ -22,7 +22,8 @@
                 "label": "Phone number",
                 "name": "phoneNumber",
                 "errors": {
-                    "required": "This field is required"
+                    "required": "This field is required",
+                    "phoneNumber": "Invalid phone number"
                 }
             }
         },
