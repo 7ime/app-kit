@@ -4,6 +4,7 @@ import ReactSelect from 'react-select'
 import css from '../../styles/select.module.scss'
 import ISelect from '../../model'
 import ValidationMessage from '@components/ui/validation-message/components/validation-message'
+import {getSelectOptionByValue} from '@components/ui/select/helpers/get-select-option-by-value'
 
 const Select = (props: ISelect.Props) => {
     const {
@@ -12,7 +13,7 @@ const Select = (props: ISelect.Props) => {
         onChange,
         options,
         parentClass,
-        value: externalValue,
+        value = null,
         components,
         success,
         successMessage,
@@ -20,21 +21,21 @@ const Select = (props: ISelect.Props) => {
         errorMessage
     } = props
 
-    const [value, setValue] = React.useState<ISelect.Option | null>(externalValue ? externalValue : null)
     const [focused, setFocused] = React.useState(false)
+    const [valueOption, setValueOption] = React.useState(getSelectOptionByValue(value, options))
 
     React.useEffect(() => {
-        setValue(externalValue ? externalValue : null)
-    }, [externalValue])
+        setValueOption(getSelectOptionByValue(value, options))
+    }, [value, options])
 
     const handleChange = (option: ISelect.Option | null) => {
-        setValue(option)
+        setValueOption(option)
         onChange && onChange(option)
     }
 
     const classNames = classnames(
         css.select,
-        {[css.is_selected]: !!value},
+        {[css.is_selected]: !!valueOption},
         {[css.is_focused]: focused},
         {[css.is_error]: error},
         {[css.is_success]: success},
@@ -49,7 +50,7 @@ const Select = (props: ISelect.Props) => {
                 options={options}
                 noOptionsMessage={() => 'Not found'}
                 classNamePrefix="Select"
-                value={value}
+                value={valueOption}
                 onChange={handleChange}
                 components={components}
                 onMenuOpen={() => setFocused(true)}

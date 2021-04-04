@@ -12,7 +12,7 @@ namespace ISelect {
         label: string
         name: string
         options: Option[]
-        value?: Option | null
+        value?: Option['value'] | null
         components?: NamedProps['components']
 
         onChange?(option: Option | null): unknown

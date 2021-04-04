@@ -19,14 +19,6 @@ interface IProps extends IParentClass, IFieldValidationStatus {
     onChange(option: ISelect.Option | null): void
 }
 
-const getValueOption = (
-    value: string | null, options: ISelect.Option[],
-): ISelect.Option | null => {
-    if (value === null) return null
-
-    return options.find((item) => item.value === value) || null
-}
-
 const PhoneSelect = (props: IProps) => {
     const {
         label,
@@ -42,13 +34,9 @@ const PhoneSelect = (props: IProps) => {
 
     const {t} = useTranslation()
     const countries = t<Record<string, string>>('countries:data', { returnObjects: true })
-    const countriesOptions = React.useMemo(() => sortByAlphaOrder(transformCountriesToSelectOptions(countries), 'label'), [])
-
-    const [valueOption, setValueOption] = React.useState(getValueOption(null, countriesOptions))
-
-    React.useEffect(() => {
-        setValueOption(getValueOption(countryCode, countriesOptions))
-    }, [countryCode, countriesOptions])
+    const countriesOptions = React.useMemo(() => {
+        return sortByAlphaOrder(transformCountriesToSelectOptions(countries), 'label')
+    }, [])
 
     const classNames = classnames(
         css.phoneSelect,
@@ -59,7 +47,7 @@ const PhoneSelect = (props: IProps) => {
         <div className={classNames}>
             <Select label={label}
                     name={name}
-                    value={valueOption}
+                    value={countryCode}
                     onChange={onChange}
                     options={countriesOptions}
                     components={{Option: PhoneSelectOption, ValueContainer: PhoneSelectValueContainer}}
