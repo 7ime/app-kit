@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useForm, Controller } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import css from './index.module.scss'
@@ -17,6 +17,9 @@ import {IFormInLocales} from '@models/form'
 import Alert from '@components/ui/alert/components/alert'
 import classnames from 'classnames'
 import PhoneNumber from '@components/common/phone/phone-number'
+import ISelect from '@components/ui/select/model'
+import phoneNumber from '@modules/phone-number'
+import {IPhoneNumber} from '@modules/phone-number/model'
 
 interface IFieldsValues {
     countryCode: string;
@@ -42,13 +45,37 @@ const AuthLoginByPhone = () => {
 
     const {
         handleSubmit,
-        control,
-        errors,
-        setValue,
-        formState,
+        // control,
+        // errors,
+        // setValue,
+        // formState,
     } = useForm<IFieldsValues>({
         resolver: yupResolver(schema)
     })
+
+    const [countryCode, setCountryCode] = React.useState<IPhoneNumber.CountryCode | null>(null)
+    const [phoneCode, setPhoneCode] = React.useState('')
+
+    const handleChangeCountries = (option: ISelect.Option | null) => {
+        if (option) {
+            const newCountryCode: IPhoneNumber.CountryCode = option.value as IPhoneNumber.CountryCode
+            const newCallingCode = phoneNumber.getCountryCallingCode(newCountryCode)
+
+            setCountryCode(newCountryCode)
+            setPhoneCode(newCallingCode ? newCallingCode : '')
+        } else {
+            setCountryCode(null)
+            setPhoneCode('')
+        }
+    }
+
+    const handleChangePhoneCode = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newCallingCode = event.target.value
+        const newCountryCode = phoneNumber.getCountryCodeByCallingCode(newCallingCode)
+
+        setPhoneCode(newCallingCode)
+        setCountryCode(newCountryCode)
+    }
 
     const handleSubmitAfterValidation = React.useCallback((data: IFieldsValues) => {
         console.log(data)
@@ -78,17 +105,25 @@ const AuthLoginByPhone = () => {
 
                 <AuthForm onSubmit={handleSubmit(handleSubmitAfterValidation)}>
                     <AuthFormRow>
-                        <PhoneSelect label={'Country'} name={'country'} />
+                        <PhoneSelect
+                            label={'Country'}
+                            name={'country'}
+                            onChange={handleChangeCountries}
+                            countryCode={countryCode}
+                        />
                     </AuthFormRow>
 
                     <AuthFormRow>
                         <div className={css.phone}>
                             <div className={css.code}>
-                                <PhoneCode />
+                                <PhoneCode
+                                    value={phoneCode}
+                                    onChange={handleChangePhoneCode}
+                                />
                             </div>
 
                             <div className={css.number}>
-                                <PhoneNumber />
+                                <PhoneNumber countryCode={countryCode} />
                             </div>
                         </div>
                     </AuthFormRow>

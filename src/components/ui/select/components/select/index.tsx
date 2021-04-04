@@ -11,20 +11,25 @@ const Select = (props: ISelect.Props) => {
         onChange,
         options,
         parentClass,
+        value: externalValue,
         components
     } = props
 
-    const [selectedValue, setSelectedValue] = React.useState<string | null>(null)
+    const [value, setValue] = React.useState<ISelect.Option | null>(externalValue ? externalValue : null)
     const [focused, setFocused] = React.useState(false)
 
+    React.useEffect(() => {
+        setValue(externalValue ? externalValue : null)
+    }, [externalValue])
+
     const handleChange = (option: ISelect.Option | null) => {
-        setSelectedValue(option ? option.value : null)
+        setValue(option)
         onChange && onChange(option)
     }
 
     const classNames = classnames(
         css.select,
-        {[css.selected]: selectedValue !== null},
+        {[css.selected]: !!value},
         {[css.focused]: focused},
         parentClass
     )
@@ -37,6 +42,7 @@ const Select = (props: ISelect.Props) => {
                 options={options}
                 noOptionsMessage={() => 'Not found'}
                 classNamePrefix="Select"
+                value={value}
                 onChange={handleChange}
                 components={components}
                 onMenuOpen={() => setFocused(true)}

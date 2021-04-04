@@ -1,9 +1,9 @@
 import * as React from 'react'
 import classnames from 'classnames'
 import css from './index.module.scss'
-import {getCountryCallingCode} from 'libphonenumber-js'
 import {SelectComponents} from 'react-select/src/components'
 import ISelect from '@components/ui/select/model'
+import phoneNumber from '@modules/phone-number'
 
 const PhoneSelectOption: SelectComponents<ISelect.Option, false>['Option'] = (props) => {
     const {
@@ -13,7 +13,7 @@ const PhoneSelectOption: SelectComponents<ISelect.Option, false>['Option'] = (pr
         isSelected
     } = props
 
-    const code = React.useMemo(() => getCountryCallingCode(data.value), [])
+    const code = React.useMemo(() => phoneNumber.getCountryCallingCode(data.value), [])
 
     const classNames = classnames(
         css.phoneSelectOption,

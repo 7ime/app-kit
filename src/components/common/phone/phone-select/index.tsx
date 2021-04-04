@@ -7,22 +7,42 @@ import Select from '@components/ui/select/components/select'
 import PhoneSelectOption from '@components/common/phone/phone-select-option'
 import {IParentClass} from '@models/shared'
 import PhoneSelectValueContainer from '@components/common/phone/phone-select-value-container'
+import ISelect from '@components/ui/select/model'
+import {IPhoneNumber} from '@modules/phone-number/model'
 
 interface IProps extends IParentClass {
-    label: string;
-    name: string;
+    label: string
+    name: string
+    countryCode: IPhoneNumber.CountryCode | null
+    onChange(option: ISelect.Option | null): void
+}
+
+const getValueOption = (
+    value: string | null, options: ISelect.Option[],
+): ISelect.Option | null => {
+    if (value === null) return null
+
+    return options.find((item) => item.value === value) || null
 }
 
 const PhoneSelect = (props: IProps) => {
     const {
         label,
         name,
-        parentClass
+        parentClass,
+        onChange,
+        countryCode
     } = props
 
     const {t} = useTranslation()
     const countries = t<Record<string, string>>('countries:data', { returnObjects: true })
     const countriesOptions = React.useMemo(() => transformCountriesToSelectOptions(countries), [])
+
+    const [valueOption, setValueOption] = React.useState(getValueOption(null, countriesOptions))
+
+    React.useEffect(() => {
+        setValueOption(getValueOption(countryCode, countriesOptions))
+    }, [countryCode, countriesOptions])
 
     const classNames = classnames(
         css.phoneSelect,
@@ -33,6 +53,8 @@ const PhoneSelect = (props: IProps) => {
         <div className={classNames}>
             <Select label={label}
                     name={name}
+                    value={valueOption}
+                    onChange={onChange}
                     options={countriesOptions}
                     components={{Option: PhoneSelectOption, ValueContainer: PhoneSelectValueContainer}}
             />

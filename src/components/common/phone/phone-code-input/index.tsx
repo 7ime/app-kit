@@ -6,19 +6,19 @@ import css from './index.module.scss'
 import {IParentClass} from '@models/shared'
 import Input from '@components/ui/textfield/components/input'
 
-interface IProps extends IParentClass {}
+interface IProps extends IParentClass {
+    value: string
+    onChange(event: React.ChangeEvent<HTMLInputElement>): void
+}
 
 const PhoneCode = (props: IProps) => {
     const {
+        value,
+        onChange,
         parentClass
     } = props
 
     const [isFocused, setFocus] = React.useState(false)
-    const [value, setValue] = React.useState('')
-
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(event.target.value)
-    }
 
     const InputProps: InputBaseProps = {}
 
@@ -39,7 +39,7 @@ const PhoneCode = (props: IProps) => {
         <div className={classNames}>
             <Input
                 value={value}
-                onChange={handleChange}
+                onChange={onChange}
                 onFocus={() => setFocus(true)}
                 onBlur={() => setFocus(false)}
                 label={'Code'}

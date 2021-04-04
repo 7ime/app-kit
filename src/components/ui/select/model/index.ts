@@ -11,6 +11,7 @@ namespace ISelect {
         label: string
         name: string
         options: Option[]
+        value?: Option | null
         onChange?(option: Option | null): unknown
         components?: NamedProps['components']
     }

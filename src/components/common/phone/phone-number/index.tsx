@@ -4,12 +4,17 @@ import NumberFormat from 'react-number-format'
 import css from './index.module.scss'
 import {IParentClass} from '@models/shared'
 import Input from '@components/ui/textfield/components/input'
+import {IPhoneNumber} from '@modules/phone-number/model'
+import phoneNumber from '@modules/phone-number'
 
-interface IProps extends IParentClass {}
+interface IProps extends IParentClass {
+    countryCode: IPhoneNumber.CountryCode | null
+}
 
 const PhoneNumber = (props: IProps) => {
     const {
-        parentClass
+        parentClass,
+        countryCode,
     } = props
 
     const classNames = classnames(
@@ -18,6 +23,8 @@ const PhoneNumber = (props: IProps) => {
     )
 
     const [isFocused, setFocus] = React.useState(false)
+
+    const format = countryCode ? phoneNumber.getCountryPhoneMask(countryCode)?.internationalShort : undefined
 
     return (
         <div className={classNames}>
@@ -29,7 +36,7 @@ const PhoneNumber = (props: IProps) => {
                 type="tel"
                 label={'Phone number'}
                 customInput={Input}
-                format="## ### ####"
+                format={format}
                 mask="-"
             />
         </div>
