@@ -10,6 +10,7 @@ import PhoneSelectValueContainer from '@components/common/phone/phone-select-val
 import ISelect from '@components/ui/select/model'
 import {IPhoneNumber} from '@modules/phone-number/model'
 import {IFieldValidationStatus} from '@models/field-validation-status'
+import {sortByAlphaOrder} from '@helpers/sorts/sort-by-alpha-order'
 
 interface IProps extends IParentClass, IFieldValidationStatus {
     label: string
@@ -41,7 +42,7 @@ const PhoneSelect = (props: IProps) => {
 
     const {t} = useTranslation()
     const countries = t<Record<string, string>>('countries:data', { returnObjects: true })
-    const countriesOptions = React.useMemo(() => transformCountriesToSelectOptions(countries), [])
+    const countriesOptions = React.useMemo(() => sortByAlphaOrder(transformCountriesToSelectOptions(countries), 'label'), [])
 
     const [valueOption, setValueOption] = React.useState(getValueOption(null, countriesOptions))
 
