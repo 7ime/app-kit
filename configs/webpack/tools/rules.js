@@ -29,25 +29,46 @@ module.exports = {
     },
     cssFiles() {
         return {
-            test: /\.(sa|sc|c)ss$/,
-            use: [
+            oneOf: [
                 {
-                    loader: MiniCssExtractPlugin.loader,
-                    options: {
-                        hmr: isDevMode(),
-                    },
-                },
-                {
-                    loader: 'css-loader',
-                    options: {
-                        importLoaders: 1,
-                        modules: {
-                            localIdentName: '[local]__[hash:base64:5]',
+                    test: /module\.(sa|sc|c)ss$/,
+                    use: [
+                        {
+                            loader: MiniCssExtractPlugin.loader,
+                            options: {
+                                hmr: isDevMode(),
+                            },
+                        },
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                importLoaders: 1,
+                                modules: {
+                                    localIdentName: '[local]__[hash:base64:5]',
+                                }
+                            }
+                        },
+                        {
+                            loader: 'sass-loader'
                         }
-                    }
+                    ]
                 },
                 {
-                    loader: 'sass-loader'
+                    test: /\.(sa|sc|c)ss$/,
+                    use: [
+                        {
+                            loader: MiniCssExtractPlugin.loader,
+                            options: {
+                                hmr: isDevMode(),
+                            },
+                        },
+                        {
+                            loader: 'css-loader',
+                        },
+                        {
+                            loader: 'sass-loader'
+                        }
+                    ]
                 }
             ]
         }
