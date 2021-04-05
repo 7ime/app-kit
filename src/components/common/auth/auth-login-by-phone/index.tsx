@@ -86,7 +86,6 @@ const AuthLoginByPhone = () => {
     }
 
     const handleSubmitAfterValidation = React.useCallback((data: IFieldsValues) => {
-        console.log(data)
         setShowSuccessAlert(true)
     }, [])
 
@@ -116,8 +115,8 @@ const AuthLoginByPhone = () => {
                         <PhoneSelectCountry
                             label={fields.countryCode.label}
                             name={fields.countryCode.name}
-                            onChange={handleChangeCountries}
                             value={countryCode}
+                            onChange={handleChangeCountries}
                             error={!!errors.countryCode}
                             errorMessage={errors.countryCode?.message}
                         />
@@ -125,7 +124,7 @@ const AuthLoginByPhone = () => {
 
                     <AuthFormRow>
                         <div className={css.phone}>
-                            <div className={css.code}>
+                            <div className={css.callingCode}>
                                 <PhoneCallingCode
                                     label={fields.phoneCallingCode.label}
                                     value={phoneCallingCode}

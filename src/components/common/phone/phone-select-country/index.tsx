@@ -23,13 +23,13 @@ const PhoneSelectCountry = (props: IProps) => {
     const {
         label,
         name,
-        parentClass,
-        onChange,
         value,
+        onChange,
         success,
         successMessage,
         error,
-        errorMessage
+        errorMessage,
+        parentClass,
     } = props
 
     const {t} = useTranslation()

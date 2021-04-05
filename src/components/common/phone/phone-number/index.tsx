@@ -18,11 +18,11 @@ const PhoneNumber = (props: IProps) => {
     const {
         countryCode,
         label,
+        onValueChange,
         success,
         successMessage,
         error,
         errorMessage,
-        onValueChange,
         parentClass,
     } = props
 
