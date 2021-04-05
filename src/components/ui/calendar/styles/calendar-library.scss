@@ -2,13 +2,32 @@
 @import '~@styles/variables/shared.module.scss';
 
 .react-calendar {
-    width: 350px;
+    width: 360px;
     max-width: 100%;
-    background: white;
-    border: 1px solid #a0a096;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.125em;
+    background: $white;
+    border-radius: $radius;
+    border: 1px solid $border_color;
+    font-family: $font;
 }
+
+.react-calendar__navigation {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.react-calendar__navigation__label {
+    span {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    button {
+        &:enabled:hover, &:enabled:focus {
+            background-color: transparent;
+        }
+    }
+}
+
 .react-calendar--doubleView {
     width: 700px;
 }
@@ -36,18 +55,12 @@
 .react-calendar button:enabled:hover {
     cursor: pointer;
 }
-.react-calendar__navigation {
-    height: 44px;
-    margin-bottom: 1em;
-}
+
 .react-calendar__navigation button {
     min-width: 44px;
     background: none;
 }
-.react-calendar__navigation button:enabled:hover,
-.react-calendar__navigation button:enabled:focus {
-    background-color: #e6e6e6;
-}
+
 .react-calendar__navigation button[disabled] {
     background-color: #f0f0f0;
 }
