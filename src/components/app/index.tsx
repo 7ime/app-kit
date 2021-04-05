@@ -12,6 +12,7 @@ const LoginScene = React.lazy(() => import('@components/scenes/login-scene'))
 const LoginByPhoneScene = React.lazy(() => import('@components/scenes/login-by-phone-scene'))
 const RegistrationScene = React.lazy(() => import('@components/scenes/registration-scene'))
 const CalendarScene = React.lazy(() => import('@components/scenes/calendar-scene'))
+const AvatarScene = React.lazy(() => import('@components/scenes/avatar-scene'))
 
 const App = () => {
     useTranslation()
@@ -31,6 +32,7 @@ const App = () => {
                 <Route path={Routes.loginByPhone.root()} component={LoginByPhoneScene}/>
                 <Route path={Routes.registration.root()} component={RegistrationScene}/>
                 <Route path={Routes.calendar.root()} component={CalendarScene}/>
+                <Route path={Routes.avatar.root()} component={AvatarScene}/>
                 <Redirect from='*' to={Routes.home.root()} exact/>
             </Switch>
         </React.Suspense>

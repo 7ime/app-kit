@@ -1,0 +1,2 @@
+export const DEFAULT_AVATAR_COLOR = '#EE7AAE'
+export const DEFAULT_AVATAR_INITIAL = 'A'

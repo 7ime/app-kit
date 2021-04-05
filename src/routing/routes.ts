@@ -19,6 +19,10 @@ export default class Routes {
         static root = () => '/calendar'
     }
 
+    static avatar = class {
+        static root = () => '/avatar'
+    }
+
     static restApi = class {
         static root = () => '/rest-api'
     }
