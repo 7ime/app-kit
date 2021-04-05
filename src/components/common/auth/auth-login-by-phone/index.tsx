@@ -23,7 +23,7 @@ import PhoneSelectCountry from '@components/common/phone/phone-select-country'
 import {NumberFormatValues} from 'react-number-format'
 
 interface IFieldsValues {
-    countryCode: string;
+    countryCode: string | null;
     phoneCallingCode: string;
     phoneNumber: string;
 }
@@ -41,7 +41,7 @@ const AuthLoginByPhone = () => {
     const [phoneCallingCode, setPhoneCallingCode] = React.useState('')
 
     const schema = yup.object().shape({
-        countryCode: yup.string().required(fields.countryCode.errors?.required),
+        countryCode: yup.mixed().required(fields.countryCode.errors?.required),
         phoneCallingCode: yup.string(),
         phoneNumber: yup.string().required(fields.phoneNumber.errors?.required)
     })
@@ -68,7 +68,7 @@ const AuthLoginByPhone = () => {
         setCountryCode(newCountryCode)
         setPhoneCallingCode(newCallingCode ? newCallingCode : '')
 
-        setValue('countryCode', newCountryCode ? newCountryCode : '', { shouldValidate: formState.isSubmitted })
+        setValue('countryCode', newCountryCode, { shouldValidate: formState.isSubmitted })
     }
 
     const handleChangePhoneCode = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -78,7 +78,7 @@ const AuthLoginByPhone = () => {
         setPhoneCallingCode(newCallingCode)
         setCountryCode(newCountryCode)
 
-        setValue('countryCode', newCountryCode ? newCountryCode : '', { shouldValidate: formState.isSubmitted })
+        setValue('countryCode', newCountryCode, { shouldValidate: formState.isSubmitted })
     }
 
     const handleChangePhoneNumber = ({ value }: NumberFormatValues) => {
@@ -86,6 +86,7 @@ const AuthLoginByPhone = () => {
     }
 
     const handleSubmitAfterValidation = React.useCallback((data: IFieldsValues) => {
+        console.log(data)
         setShowSuccessAlert(true)
     }, [])
 
