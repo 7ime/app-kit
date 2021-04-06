@@ -11,7 +11,6 @@ const RestApiScene = React.lazy(() => import('@components/scenes/rest-api-scene'
 const LoginScene = React.lazy(() => import('@components/scenes/login-scene'))
 const LoginByPhoneScene = React.lazy(() => import('@components/scenes/login-by-phone-scene'))
 const RegistrationScene = React.lazy(() => import('@components/scenes/registration-scene'))
-const CalendarScene = React.lazy(() => import('@components/scenes/calendar-scene'))
 const ExamplesScene = React.lazy(() => import('@components/scenes/examples-scene'))
 
 const App = () => {
@@ -31,7 +30,6 @@ const App = () => {
                 <Route path={Routes.login.root()} component={LoginScene}/>
                 <Route path={Routes.loginByPhone.root()} component={LoginByPhoneScene}/>
                 <Route path={Routes.registration.root()} component={RegistrationScene}/>
-                <Route path={Routes.calendar.root()} component={CalendarScene}/>
                 <Route path={Routes.examples.root()} component={ExamplesScene}/>
                 <Redirect from='*' to={Routes.home.root()} exact/>
             </Switch>
