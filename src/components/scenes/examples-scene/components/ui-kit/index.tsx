@@ -14,6 +14,7 @@ import ValidationMessageKit from '@components/scenes/examples-scene/components/v
 import CheckboxesKit from '@components/scenes/examples-scene/components/checkboxes-kit'
 import RadiosKit from '@components/scenes/examples-scene/components/radios-kit'
 import InputsKit from '@components/scenes/examples-scene/components/inputs-kit'
+import SegmentsKit from '@components/scenes/examples-scene/components/segment-kit'
 
 const UiKit = () => {
     return (
@@ -40,6 +41,8 @@ const UiKit = () => {
                 <AlertsKit />
                 <div className={css.divider} />
                 <CalendarsKit />
+                <div className={css.divider} />
+                <SegmentsKit />
                 <div className={css.divider} />
                 <LoadersKit />
                 <div className={css.divider} />

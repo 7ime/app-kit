@@ -24,15 +24,15 @@ const AlertsKit = () => {
                 </div>
 
                 <div className={css.item}>
-                    <span className={cssUiKit.subTitle}>Warning:</span>
-                    <Alert type={'warning'} parentClass={css.alert} onClose={() => undefined}>
+                    <span className={cssUiKit.subTitle}>Error:</span>
+                    <Alert type={'error'} parentClass={css.alert} onClose={() => undefined}>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid delectus dicta ducimusam.
                     </Alert>
                 </div>
 
                 <div className={css.item}>
-                    <span className={cssUiKit.subTitle}>Error:</span>
-                    <Alert type={'error'} parentClass={css.alert} onClose={() => undefined}>
+                    <span className={cssUiKit.subTitle}>Warning:</span>
+                    <Alert type={'warning'} parentClass={css.alert} onClose={() => undefined}>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid delectus dicta ducimusam.
                     </Alert>
                 </div>

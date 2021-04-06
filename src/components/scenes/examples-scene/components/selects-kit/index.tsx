@@ -37,6 +37,16 @@ const SelectsKit = () => {
                     <span className={cssUiKit.subTitle}>Default:</span>
                     <Select label={'Select Option'} options={options} parentClass={css.select} />
                 </div>
+
+                <div className={css.item}>
+                    <span className={cssUiKit.subTitle}>Success:</span>
+                    <Select label={'Select Option'} options={options} parentClass={css.select} success successMessage={'Test message'}/>
+                </div>
+
+                <div className={css.item}>
+                    <span className={cssUiKit.subTitle}>Error:</span>
+                    <Select label={'Select Option'} options={options} parentClass={css.select} error errorMessage={'Test message'}/>
+                </div>
             </div>
         </div>
     )

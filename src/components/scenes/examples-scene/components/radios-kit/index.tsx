@@ -47,6 +47,16 @@ const RadiosKit = () => {
                 </div>
 
                 <div className={css.item}>
+                    <span className={cssUiKit.subTitle}>Disabled:</span>
+                    <RadioGroup value={value} disabled onChange={handleChange} name={'disabled'}>
+                        <Radio value={'+'} type={'secondary'}>Plus</Radio>
+                        <Radio value={'/'} type={'secondary'}>Divided by</Radio>
+                        <Radio value={'*'} type={'secondary'}>Times</Radio>
+                        <Radio value={'-'} type={'secondary'}>Minus</Radio>
+                    </RadioGroup>
+                </div>
+
+                <div className={css.item}>
                     <span className={cssUiKit.subTitle}>Success:</span>
                     <RadioGroup value={value} onChange={handleChange} name={'success'} success successMessage={'test success message'}>
                         <Radio value={'+'} type={'primary'}>Plus</Radio>
@@ -63,16 +73,6 @@ const RadiosKit = () => {
                         <Radio value={'/'} type={'primary'}>Divided by</Radio>
                         <Radio value={'*'} type={'primary'}>Times</Radio>
                         <Radio value={'-'} type={'primary'}>Minus</Radio>
-                    </RadioGroup>
-                </div>
-
-                <div className={css.item}>
-                    <span className={cssUiKit.subTitle}>Disabled:</span>
-                    <RadioGroup value={value} disabled onChange={handleChange} name={'disabled'}>
-                        <Radio value={'+'} type={'secondary'}>Plus</Radio>
-                        <Radio value={'/'} type={'secondary'}>Divided by</Radio>
-                        <Radio value={'*'} type={'secondary'}>Times</Radio>
-                        <Radio value={'-'} type={'secondary'}>Minus</Radio>
                     </RadioGroup>
                 </div>
             </div>

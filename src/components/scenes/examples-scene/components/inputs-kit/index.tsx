@@ -31,6 +31,11 @@ const InputsKit = () => {
                 </div>
 
                 <div className={css.item}>
+                    <span className={cssUiKit.subTitle}>Disabled:</span>
+                    <Input label={'Label'} disabled value={'Test value'} />
+                </div>
+
+                <div className={css.item}>
                     <span className={cssUiKit.subTitle}>Success:</span>
                     <Input label={'Label'} success successMessage={'test success message'} />
                 </div>
@@ -38,11 +43,6 @@ const InputsKit = () => {
                 <div className={css.item}>
                     <span className={cssUiKit.subTitle}>Error:</span>
                     <Input label={'Label'} error errorMessage={'test error message'} />
-                </div>
-
-                <div className={css.item}>
-                    <span className={cssUiKit.subTitle}>Disabled:</span>
-                    <Input label={'Label'} disabled value={'Test value'} />
                 </div>
             </div>
         </div>
