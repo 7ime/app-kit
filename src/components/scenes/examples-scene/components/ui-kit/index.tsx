@@ -2,20 +2,20 @@ import * as React from 'react'
 import {Helmet} from 'react-helmet'
 import classnames from 'classnames'
 import css from './index.module.scss'
-import AvatarsKit from '@components/scenes/components-kit-scene/components/avatars-kit'
+import AvatarsKit from '@components/scenes/examples-scene/components/avatars-kit'
 
-const ComponentsKitScene = () => {
+const UiKit = () => {
     return (
         <React.Fragment>
             <Helmet>
-                <title>Components Kit</title>
+                <title>Examples Ui Kit</title>
             </Helmet>
 
-            <div className={classnames(css.componentsKitScene, 'container')}>
+            <div className={classnames(css.uiKit, 'container')}>
                 <AvatarsKit />
             </div>
         </React.Fragment>
     )
 }
 
-export default ComponentsKitScene
+export default UiKit

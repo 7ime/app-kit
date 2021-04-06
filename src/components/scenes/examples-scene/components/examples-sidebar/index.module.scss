@@ -8,7 +8,7 @@
     top: 0;
     left: 0;
     z-index: 900;
-    border-right: 1px solid $grey_10;
+    border-right: 1px solid $border_color;
 
     .logo {
         display: flex;
@@ -17,7 +17,7 @@
         font-weight: 600;
         padding: 15px 10px;
         color: $primary;
-        border-bottom: 1px solid $grey_10;
+        border-bottom: 1px solid $border_color;
 
         span {
             color: $black;
@@ -35,7 +35,7 @@
     .menu {
         display: flex;
         flex-direction: column;
-        margin-top: 10px;
+        margin-top: 20px;
 
         .link {
             display: flex;
@@ -51,7 +51,7 @@
 
             &, &:active {
                 text-decoration: none;
-                color: $black_70;
+                color: $black;
             }
 
             .icon {
@@ -77,7 +77,7 @@
 
             .text {
                 padding-left: 10px;
-                font-size: 16px;
+                font-size: 14px;
                 font-weight: 600;
             }
 

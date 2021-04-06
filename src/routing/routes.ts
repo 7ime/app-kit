@@ -15,10 +15,6 @@ export default class Routes {
         static root = () => '/registration'
     }
 
-    static componentsKit = class {
-        static root = () => '/components-kit'
-    }
-
     static calendar = class {
         static root = () => '/calendar'
     }
