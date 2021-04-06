@@ -4,8 +4,7 @@ namespace IAvatar {
     export type Initials = [string, string?]
 
     export interface Props extends IParentClass {
-        bgImageUrl?: string
-        bgColor?: string
+        imageUrl?: string
         name?: string
     }
 }

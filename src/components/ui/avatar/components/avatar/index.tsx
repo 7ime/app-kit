@@ -2,47 +2,42 @@ import * as React from 'react'
 import classnames from 'classnames'
 import css from '../../styles/avatar.module.scss'
 import IAvatar from '@components/ui/avatar/model'
-import {extractAvatarInitials} from '@components/ui/avatar/helpers/extract-avatar-initilas'
-import {DEFAULT_AVATAR_COLOR} from '@components/ui/avatar/constants'
+import {extractAvatarInitials} from '@helpers/avatar/extract-avatar-initilas'
+import {getAvatarBgColor} from '@helpers/avatar/get-avatar-bg-color'
 
 const Avatar = (props: IAvatar.Props) => {
     const {
-        bgImageUrl,
-        bgColor = DEFAULT_AVATAR_COLOR,
+        imageUrl,
         name,
         parentClass
     } = props
-
-    let initials = null
-
-    if (name) {
-        initials = extractAvatarInitials(name)
-    }
-
-    if (!bgImageUrl && !name) {
-        initials = extractAvatarInitials('')
-    }
 
     const classNames = classnames(
         css.avatar,
         parentClass
     )
 
+    if (imageUrl) {
+        return (
+            <div className={classNames} style={{
+                backgroundImage: `url(${imageUrl})`
+            }} />
+        )
+    }
+
+    const [firstInitial, secondInitial] = extractAvatarInitials(name || '')
+    const bgColor = getAvatarBgColor(firstInitial)
+
     return (
         <div className={classNames} style={{
-            backgroundImage: bgImageUrl ? `url(${bgImageUrl})` : 'none',
             backgroundColor: bgColor,
         }}>
-            {
-                initials && (
-                    <div className={css.initials}>
-                        <span>{initials[0]}</span>
-                        {
-                            initials[1] && <span>{initials[1]}</span>
-                        }
-                    </div>
-                )
-            }
+            <div className={css.initials}>
+                <span>{firstInitial}</span>
+                {
+                    secondInitial && <span>{secondInitial}</span>
+                }
+            </div>
         </div>
     )
 }

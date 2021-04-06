@@ -1,5 +1,5 @@
 import IAvatar from '@components/ui/avatar/model'
-import {DEFAULT_AVATAR_INITIAL} from '@components/ui/avatar/constants'
+import {DEFAULT_AVATAR_INITIAL} from '@constants/avatar'
 
 export const extractAvatarInitials = (source: string): IAvatar.Initials => {
     const result: IAvatar.Initials = [DEFAULT_AVATAR_INITIAL]
