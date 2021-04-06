@@ -11,6 +11,7 @@ import TypographyKit from '@components/scenes/examples-scene/components/typograp
 import ScrollbarsKit from '@components/scenes/examples-scene/components/scrollbar-kit'
 import SwitchesKit from '@components/scenes/examples-scene/components/switches-kit'
 import ValidationMessageKit from '@components/scenes/examples-scene/components/validation-message-kit'
+import CheckboxesKit from '@components/scenes/examples-scene/components/checkboxes-kit'
 
 const UiKit = () => {
     return (
@@ -25,6 +26,8 @@ const UiKit = () => {
                 <ValidationMessageKit />
                 <br/>
                 <SwitchesKit />
+                <br/>
+                <CheckboxesKit />
                 <br/>
                 <SelectsKit />
                 <br/>
