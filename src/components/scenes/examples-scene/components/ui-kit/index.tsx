@@ -9,6 +9,7 @@ import SelectsKit from '@components/scenes/examples-scene/components/selects-kit
 import LoadersKit from '@components/scenes/examples-scene/components/loaders-kit'
 import TypographyKit from '@components/scenes/examples-scene/components/typography-kit'
 import ScrollbarsKit from '@components/scenes/examples-scene/components/scrollbar-kit'
+import SwitchesKit from '@components/scenes/examples-scene/components/switches-kit'
 
 const UiKit = () => {
     return (
@@ -19,6 +20,8 @@ const UiKit = () => {
 
             <div className={classnames(css.uiKit, 'container')}>
                 <AvatarsKit />
+                <br/>
+                <SwitchesKit />
                 <br/>
                 <LoadersKit />
                 <br/>
