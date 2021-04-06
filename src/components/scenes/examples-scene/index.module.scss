@@ -1,0 +1,17 @@
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
+
+.exampleScene {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-left: 240px;
+
+    .sidebar {
+
+    }
+
+    .content {
+
+    }
+}

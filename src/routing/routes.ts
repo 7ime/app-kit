@@ -26,4 +26,10 @@ export default class Routes {
     static restApi = class {
         static root = () => '/rest-api'
     }
+
+    static examples = class  {
+        static root = () => '/examples'
+        static uiKit = () => '/examples/ui-kit'
+        static authKit = () => '/examples/auth-kit'
+    }
 }
