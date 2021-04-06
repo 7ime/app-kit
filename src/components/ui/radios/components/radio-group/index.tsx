@@ -37,7 +37,8 @@ const RadioGroup = (props: IRadio.GroupProps) => {
                         checked,
                         disabled: child.props.disabled || disabled,
                         error: child.props.error || error,
-                        success: child.props.success || success
+                        success: child.props.success || success,
+                        parentClass: css.radio
                     })
                 })
             }

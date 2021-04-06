@@ -2,6 +2,8 @@
 @import '~@styles/variables/shared.module.scss';
 
 .avatarsKit {
+    margin-bottom: -20px;
+
     .list {
         display: flex;
         flex-wrap: wrap;

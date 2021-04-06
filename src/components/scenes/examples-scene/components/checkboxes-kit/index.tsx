@@ -1,7 +1,6 @@
 import * as React from 'react'
 import css from './index.module.scss'
 import cssUiKit from '../ui-kit/index.module.scss'
-import Switch from '@components/ui/switches/components/switch'
 import Checkbox from '@components/ui/checkboxes/components/checkbox'
 
 const CheckboxesKit = () => {

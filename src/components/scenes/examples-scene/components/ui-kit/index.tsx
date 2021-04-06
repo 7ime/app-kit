@@ -12,6 +12,7 @@ import ScrollbarsKit from '@components/scenes/examples-scene/components/scrollba
 import SwitchesKit from '@components/scenes/examples-scene/components/switches-kit'
 import ValidationMessageKit from '@components/scenes/examples-scene/components/validation-message-kit'
 import CheckboxesKit from '@components/scenes/examples-scene/components/checkboxes-kit'
+import RadiosKit from '@components/scenes/examples-scene/components/radios-kit'
 
 const UiKit = () => {
     return (
@@ -22,23 +23,25 @@ const UiKit = () => {
 
             <div className={classnames(css.uiKit, 'container')}>
                 <AvatarsKit />
-                <br/>
+                <div className={css.divider} />
                 <ValidationMessageKit />
-                <br/>
+                <div className={css.divider} />
                 <SwitchesKit />
-                <br/>
+                <div className={css.divider} />
                 <CheckboxesKit />
-                <br/>
+                <div className={css.divider} />
+                <RadiosKit />
+                <div className={css.divider} />
                 <SelectsKit />
-                <br/>
+                <div className={css.divider} />
                 <AlertsKit />
-                <br />
+                <div className={css.divider} />
                 <CalendarsKit />
-                <br/>
+                <div className={css.divider} />
                 <LoadersKit />
-                <br/>
+                <div className={css.divider} />
                 <TypographyKit />
-                <br/>
+                <div className={css.divider} />
                 <ScrollbarsKit />
             </div>
         </React.Fragment>

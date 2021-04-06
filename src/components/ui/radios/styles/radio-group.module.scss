@@ -4,7 +4,11 @@
 .radioGroup {
     position: relative;
 
+    .radio {
+        margin-bottom: 5px;
+    }
+
     .validationMessage {
-        margin-top: 0.5rem;
+        margin-top: 0.3rem;
     }
 }
