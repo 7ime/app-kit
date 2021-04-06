@@ -17,7 +17,7 @@
         transition: 0.15s ease-in-out;
         transform: translate(0, 32px) scale(1);
 
-        &:global(.Mui-focused), &:global(.MuiInputLabel-shrink) {
+        &:global(.Mui-focused), &:global(.MuiInputLabel-shrink), &:global(.Mui-disabled) {
             color: $grey;
             transform: translate(0, 1.5px) scale(0.8);
         }
@@ -41,6 +41,10 @@
 
         &:global(.Mui-focused):after {
             opacity: 1;
+        }
+
+        &:global(.Mui-disabled) {
+            color: $grey;
         }
     }
 

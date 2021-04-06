@@ -13,6 +13,7 @@ import SwitchesKit from '@components/scenes/examples-scene/components/switches-k
 import ValidationMessageKit from '@components/scenes/examples-scene/components/validation-message-kit'
 import CheckboxesKit from '@components/scenes/examples-scene/components/checkboxes-kit'
 import RadiosKit from '@components/scenes/examples-scene/components/radios-kit'
+import InputsKit from '@components/scenes/examples-scene/components/inputs-kit'
 
 const UiKit = () => {
     return (
@@ -31,6 +32,8 @@ const UiKit = () => {
                 <CheckboxesKit />
                 <div className={css.divider} />
                 <RadiosKit />
+                <div className={css.divider} />
+                <InputsKit />
                 <div className={css.divider} />
                 <SelectsKit />
                 <div className={css.divider} />

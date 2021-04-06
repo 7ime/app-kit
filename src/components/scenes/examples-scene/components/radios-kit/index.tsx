@@ -39,10 +39,10 @@ const RadiosKit = () => {
                 <div className={css.item}>
                     <span className={cssUiKit.subTitle}>Secondary:</span>
                     <RadioGroup value={value} onChange={handleChange} name={'secondary'}>
-                        <Radio value={'+'} type={'primary'}>Plus</Radio>
-                        <Radio value={'/'} type={'primary'}>Divided by</Radio>
-                        <Radio value={'*'} type={'primary'}>Times</Radio>
-                        <Radio value={'-'} type={'primary'}>Minus</Radio>
+                        <Radio value={'+'} type={'secondary'}>Plus</Radio>
+                        <Radio value={'/'} type={'secondary'}>Divided by</Radio>
+                        <Radio value={'*'} type={'secondary'}>Times</Radio>
+                        <Radio value={'-'} type={'secondary'}>Minus</Radio>
                     </RadioGroup>
                 </div>
 
