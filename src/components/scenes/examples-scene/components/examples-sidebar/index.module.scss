@@ -8,17 +8,27 @@
     top: 0;
     left: 0;
     z-index: 900;
+    border-right: 1px solid $grey_10;
 
     .logo {
         display: flex;
         justify-content: center;
         font-size: 25px;
         font-weight: 600;
-        padding: 10px;
+        padding: 15px 10px;
         color: $primary;
+        border-bottom: 1px solid $grey_10;
 
         span {
             color: $black;
+        }
+
+        i {
+            position: relative;
+            top: 16px;
+            font-size: 10px;
+            margin-left: 5px;
+            color: $grey;
         }
     }
 
@@ -34,7 +44,6 @@
             transition: .15s ease-in-out;
             min-height: 48px;
             padding: 0 15px;
-            border-radius: 0 12px 12px 0;
 
             &.is_active {
                 background-color: $grey_10;

@@ -19,7 +19,7 @@ const ExamplesSidebar = (props: IProps) => {
 
     return (
         <div className={classNames}>
-            <div className={css.logo}>App <span>Kit</span></div>
+            <div className={css.logo}>App <span>Kit</span> <i>v1.0.0</i></div>
 
             <div className={css.menu}>
                 <NavLink to={Routes.home.root()}
