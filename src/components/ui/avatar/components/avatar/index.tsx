@@ -2,8 +2,9 @@ import * as React from 'react'
 import classnames from 'classnames'
 import css from '../../styles/avatar.module.scss'
 import IAvatar from '@components/ui/avatar/model'
-import {extractAvatarInitials} from '@helpers/avatar/extract-avatar-initilas'
-import {getAvatarBgColor} from '@helpers/avatar/get-avatar-bg-color'
+import {getAvatarInitials} from '@helpers/avatar/get-avatar-initilas'
+import {getAvatarColor} from '@helpers/avatar/get-avatar-color'
+import {AVATAR_COLORS, DEFAULT_AVATAR_INITIAL} from '@constants/avatar'
 
 const Avatar = (props: IAvatar.Props) => {
     const {
@@ -25,8 +26,8 @@ const Avatar = (props: IAvatar.Props) => {
         )
     }
 
-    const [firstInitial, secondInitial] = extractAvatarInitials(name || '')
-    const bgColor = getAvatarBgColor(firstInitial)
+    const [firstInitial, secondInitial] = getAvatarInitials(name || '', [DEFAULT_AVATAR_INITIAL])
+    const bgColor = getAvatarColor(firstInitial, Array.from(AVATAR_COLORS.values()))
 
     return (
         <div className={classNames} style={{

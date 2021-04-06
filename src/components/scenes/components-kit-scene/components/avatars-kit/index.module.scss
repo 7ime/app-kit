@@ -1,0 +1,24 @@
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
+
+.avatarsKit {
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        margin: 0 -10px;
+    }
+
+    .item {
+        padding: 0 10px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80px;
+
+        .avatar {
+            margin-top: 10px;
+        }
+    }
+}

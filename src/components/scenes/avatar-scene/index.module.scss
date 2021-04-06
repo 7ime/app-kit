@@ -7,10 +7,7 @@
 
     .list {
         width: 100%;
-        display: grid;
-        grid-auto-columns: max-content;
-        grid-template-columns: repeat(auto-fill, auto);
-        grid-auto-rows: auto;
-        grid-gap: 10px;
+        display: flex;
+        flex-wrap: wrap;
     }
 }

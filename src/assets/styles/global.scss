@@ -6,8 +6,8 @@
 @import "./others/typography.module";
 @import "./others/scrollbar.module";
 
-:global .container {
+.container {
     margin: 0 auto;
     padding: 0 1.5rem;
-    max-width: 120rem;
+    max-width: 128rem;
 }
