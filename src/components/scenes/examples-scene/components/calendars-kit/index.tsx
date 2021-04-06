@@ -11,7 +11,7 @@ const CalendarsKit = () => {
             <div className={css.list}>
                 <div className={css.item}>
                     <span className={cssUiKit.subTitle}>Default:</span>
-                    <Calendar parentClass={css.avatar} />
+                    <Calendar parentClass={css.calendar} />
                 </div>
             </div>
         </div>

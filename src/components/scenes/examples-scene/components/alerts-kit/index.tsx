@@ -11,28 +11,28 @@ const AlertsKit = () => {
             <div className={css.list}>
                 <div className={css.item}>
                     <span className={cssUiKit.subTitle}>Info:</span>
-                    <Alert type={'info'} parentClass={css.alertsKit} onClose={() => undefined}>
+                    <Alert type={'info'} parentClass={css.alert} onClose={() => undefined}>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid delectus dicta ducimusam.
                     </Alert>
                 </div>
 
                 <div className={css.item}>
                     <span className={cssUiKit.subTitle}>Success:</span>
-                    <Alert type={'success'} parentClass={css.alertsKit} onClose={() => undefined}>
+                    <Alert type={'success'} parentClass={css.alert} onClose={() => undefined}>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid delectus dicta ducimusam.
                     </Alert>
                 </div>
 
                 <div className={css.item}>
                     <span className={cssUiKit.subTitle}>Warning:</span>
-                    <Alert type={'warning'} parentClass={css.alertsKit} onClose={() => undefined}>
+                    <Alert type={'warning'} parentClass={css.alert} onClose={() => undefined}>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid delectus dicta ducimusam.
                     </Alert>
                 </div>
 
                 <div className={css.item}>
                     <span className={cssUiKit.subTitle}>Error:</span>
-                    <Alert type={'error'} parentClass={css.alertsKit} onClose={() => undefined}>
+                    <Alert type={'error'} parentClass={css.alert} onClose={() => undefined}>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid delectus dicta ducimusam.
                     </Alert>
                 </div>

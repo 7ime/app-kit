@@ -10,6 +10,7 @@ import LoadersKit from '@components/scenes/examples-scene/components/loaders-kit
 import TypographyKit from '@components/scenes/examples-scene/components/typography-kit'
 import ScrollbarsKit from '@components/scenes/examples-scene/components/scrollbar-kit'
 import SwitchesKit from '@components/scenes/examples-scene/components/switches-kit'
+import ValidationMessageKit from '@components/scenes/examples-scene/components/validation-message-kit'
 
 const UiKit = () => {
     return (
@@ -21,15 +22,17 @@ const UiKit = () => {
             <div className={classnames(css.uiKit, 'container')}>
                 <AvatarsKit />
                 <br/>
-                <SwitchesKit />
+                <ValidationMessageKit />
                 <br/>
-                <LoadersKit />
+                <SwitchesKit />
                 <br/>
                 <SelectsKit />
                 <br/>
                 <AlertsKit />
                 <br />
                 <CalendarsKit />
+                <br/>
+                <LoadersKit />
                 <br/>
                 <TypographyKit />
                 <br/>
