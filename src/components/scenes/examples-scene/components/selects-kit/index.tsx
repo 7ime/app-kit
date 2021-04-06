@@ -30,7 +30,7 @@ const options: ISelect.Option[] = [
 const SelectsKit = () => {
     return (
         <div className={css.selectsKit}>
-            <div className={cssUiKit.title}>Selects Kit:</div>
+            <div className={cssUiKit.title}>Selects:</div>
 
             <div className={css.list}>
                 <div className={css.item}>

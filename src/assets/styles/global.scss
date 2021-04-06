@@ -1,10 +1,10 @@
 @import "./variables/colors.module";
 @import "./variables/shared.module";
 
-@import "./fonts/fonts.module";
-@import "./html-body/html-body.module";
-@import "./others/typography.module";
-@import "./others/scrollbar.module";
+@import "src/assets/styles/fonts/fonts";
+@import "src/assets/styles/html-body/html-body";
+@import "src/assets/styles/others/typography";
+@import "src/assets/styles/others/scrollbar";
 
 .container {
     margin: 0 auto;

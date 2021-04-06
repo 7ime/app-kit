@@ -19,14 +19,6 @@ class Fetcher implements IFetcher{
             withCredentials: false,
             responseType: 'json'
         })
-
-        this.launchInterceptors()
-    }
-
-    private launchInterceptors() {
-        this.axios.interceptors.request.use((config) => {
-            return config
-        })
     }
 
     addHeader(name: string, value: string): void {

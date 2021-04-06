@@ -6,7 +6,7 @@ import Alert from '@components/ui/alert/components/alert'
 const AlertsKit = () => {
     return (
         <div className={css.alertsKit}>
-            <div className={cssUiKit.title}>Alerts Kit:</div>
+            <div className={cssUiKit.title}>Alerts:</div>
 
             <div className={css.list}>
                 <div className={css.item}>

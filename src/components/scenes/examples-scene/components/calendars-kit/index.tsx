@@ -6,7 +6,7 @@ import Calendar from '@components/ui/calendar/components/calendar'
 const CalendarsKit = () => {
     return (
         <div className={css.calendarsKit}>
-            <div className={cssUiKit.title}>Calendars Kit:</div>
+            <div className={cssUiKit.title}>Calendars:</div>
 
             <div className={css.list}>
                 <div className={css.item}>

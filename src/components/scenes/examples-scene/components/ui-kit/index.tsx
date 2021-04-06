@@ -7,6 +7,8 @@ import CalendarsKit from '@components/scenes/examples-scene/components/calendars
 import AlertsKit from '@components/scenes/examples-scene/components/alerts-kit'
 import SelectsKit from '@components/scenes/examples-scene/components/selects-kit'
 import LoadersKit from '@components/scenes/examples-scene/components/loaders-kit'
+import TypographyKit from '@components/scenes/examples-scene/components/typography-kit'
+import ScrollbarsKit from '@components/scenes/examples-scene/components/scrollbar-kit'
 
 const UiKit = () => {
     return (
@@ -25,6 +27,10 @@ const UiKit = () => {
                 <AlertsKit />
                 <br />
                 <CalendarsKit />
+                <br/>
+                <TypographyKit />
+                <br/>
+                <ScrollbarsKit />
             </div>
         </React.Fragment>
     )

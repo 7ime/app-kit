@@ -6,7 +6,7 @@ import Loader from '@components/ui/loaders/components/loader'
 const LoadersKit = () => {
     return (
         <div className={css.loadersKit}>
-            <div className={cssUiKit.title}>Loaders Kit:</div>
+            <div className={cssUiKit.title}>Loaders:</div>
 
             <div className={css.list}>
                 <div className={css.item}>

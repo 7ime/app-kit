@@ -24,7 +24,7 @@ const examplesNames: string[] = [
 const AvatarsKit = () => {
     return (
         <div className={css.avatarsKit}>
-            <div className={cssUiKit.title}>Avatars Kit:</div>
+            <div className={cssUiKit.title}>Avatars:</div>
 
             <div className={css.list}>
                 <div className={css.item}>
