@@ -4,7 +4,7 @@ import ReactSelect from 'react-select'
 import css from '../../styles/select.module.scss'
 import ISelect from '../../model'
 import ValidationMessage from '@components/ui/validation-message/components/validation-message'
-import {getSelectOptionByValue} from '@components/ui/select/helpers/get-select-option-by-value'
+import {getSelectOptionByValue} from '@helpers/select/get-select-option-by-value'
 
 const Select = (props: ISelect.Props) => {
     const {

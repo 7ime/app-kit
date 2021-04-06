@@ -1,5 +1,7 @@
+import {IParentClass} from '@models/shared'
+
 namespace ILoader {
-    export interface Props {
+    export interface Props extends IParentClass {
         type?: 'primary' | 'secondary'
         size?: 'small' | 'large'
     }

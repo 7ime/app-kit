@@ -6,13 +6,15 @@ import classnames from 'classnames'
 const Loader = (props: ILoader.Props) => {
     const {
         type = '',
-        size = ''
+        size = '',
+        parentClass
     } = props
 
     const classNames = classnames(
         css.loader,
         {[css[type]]: type},
-        {[css[size]]: size}
+        {[css[size]]: size},
+        parentClass
     )
 
     return(

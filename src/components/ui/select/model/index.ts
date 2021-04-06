@@ -10,8 +10,8 @@ namespace ISelect {
 
     export interface Props extends IFieldValidationStatus, IParentClass {
         label: string
-        name: string
         options: Option[]
+        name?: string
         value?: Option['value'] | null
         components?: NamedProps['components']
 
