@@ -3,6 +3,6 @@ import {SAMPLE} from '@toolbox/sample'
 
 export const configurationRoutes = Object.freeze(
     {
-        baseUrl: environment.production ? `${SAMPLE.APP_WEBSITE_BASE_URL}/` : '/'
+        rootUrl: `${environment.production && SAMPLE.APP_WEBSITE_ROOT_URL ? SAMPLE.APP_WEBSITE_ROOT_URL : ''}/`
     }
 )

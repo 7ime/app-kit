@@ -1,6 +1,6 @@
 import {configurationRoutes} from '@routing/config'
 
-const base = (rest= '') => `${configurationRoutes.baseUrl}${rest}`
+const base = (rest= '') => `${configurationRoutes.rootUrl}${rest}`
 
 export default class Routes {
     static home = class {
