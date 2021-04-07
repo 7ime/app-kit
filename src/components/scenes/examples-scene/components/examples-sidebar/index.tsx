@@ -42,6 +42,14 @@ const ExamplesSidebar = (props: IProps) => {
                             <div className={classnames(css.icon, css.folder)} />
                             <div className={css.text}>Ui kit</div>
                         </NavLink>
+
+                        <NavLink to={Routes.examples.restApi()}
+                                 activeClassName={css.is_active}
+                                 className={css.link}
+                        >
+                            <div className={classnames(css.icon, css.globe)} />
+                            <div className={css.text}>Rest Api</div>
+                        </NavLink>
                     </div>
                 </div>
 

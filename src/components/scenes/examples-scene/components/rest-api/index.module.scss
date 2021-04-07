@@ -1,0 +1,35 @@
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
+
+.restApi {
+    .button {
+        min-width: 200px;
+    }
+
+    h4 {
+        margin-bottom: 2rem;
+    }
+
+    .list {
+        .item {
+            margin-bottom: 20px;
+
+            .title {
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 5px;
+                max-width: 200px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                text-transform: capitalize;
+            }
+
+            .text {
+                font-size: 12px;
+                color: $grey;
+                max-width: 600px;
+            }
+        }
+    }
+}

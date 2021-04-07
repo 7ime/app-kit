@@ -5,6 +5,7 @@ import {Maybe} from '@toolbox/custom-types'
 
 const getState = (state: IAppState) => state.jsonPlaceholder
 
+export const getLoadingPosts = createSelector(getState, (state) => state.isLoadingPosts)
 export const getPosts = createSelector(getState, state => state.posts)
 
 export const getTotalCountOfPosts = createSelector(getPosts, (posts): number | null => {
