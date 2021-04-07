@@ -19,10 +19,6 @@ export default class Routes {
         static root = () => base('registration')
     }
 
-    static restApi = class {
-        static root = () => base('rest-api')
-    }
-
     static examples = class  {
         static root = () => base('examples')
         static uiKit = () => base('examples/ui-kit')
