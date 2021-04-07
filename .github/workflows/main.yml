@@ -29,16 +29,5 @@ jobs:
               uses: JamesIves/github-pages-deploy-action@3.7.1
               with:
                   BRANCH: build
-                  TARGET_FOLDER: app
                   FOLDER: dist
                   CLEAN: true
-
-            - name: Deploy Storybook
-              uses: JamesIves/github-pages-deploy-action@3.7.1
-              with:
-                  BRANCH: build
-                  TARGET_FOLDER: storybook
-                  FOLDER: storybook-static
-                  CLEAN: true
-              env:
-                  CI: true
