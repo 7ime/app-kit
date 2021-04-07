@@ -60,7 +60,6 @@ module.exports = {
             filename: 'index.html',
             template: resolvePath(`${paths.source}/index.html`),
             chunks: 'bundle',
-            base: '/'
         })
     },
     terserPlugin() {
