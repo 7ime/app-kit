@@ -13,7 +13,7 @@ import App from './components/app'
 import i18next from '@i18n/index'
 import saga from '@store/saga'
 import {sagaMiddleware} from '@store/middleware'
-import Theme from '@components/common/theme'
+import Theme from '@components/utilities/theme'
 import {UiAction} from '@store/ui'
 import {EI18nLanguages} from '@constants/i18n'
 

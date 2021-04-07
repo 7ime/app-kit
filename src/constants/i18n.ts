@@ -5,7 +5,6 @@ export enum EI18nLanguages {
 }
 
 export enum EI18nNameSpaces {
-    settings = 'settings',
     countries = 'countries',
     auth = 'auth',
 }
