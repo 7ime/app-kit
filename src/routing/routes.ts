@@ -1,27 +1,31 @@
+import {configurationRoutes} from '@routing/config'
+
+const base = (rest= '') => `${configurationRoutes.baseUrl}${rest}`
+
 export default class Routes {
     static home = class {
-        static root = () => '/'
+        static root = () => base()
     }
 
     static login = class {
-        static root = () => '/login'
+        static root = () => base('login')
     }
 
     static loginByPhone = class {
-        static root = () => '/login-by-phone'
+        static root = () => base('login-by-phone')
     }
 
     static registration = class {
-        static root = () => '/registration'
+        static root = () => base('registration')
     }
 
     static restApi = class {
-        static root = () => '/rest-api'
+        static root = () => base('rest-api')
     }
 
     static examples = class  {
-        static root = () => '/examples'
-        static uiKit = () => '/examples/ui-kit'
-        static authKit = () => '/examples/auth-kit'
+        static root = () => base('examples')
+        static uiKit = () => base('examples/ui-kit')
+        static authKit = () => base('examples/auth-kit')
     }
 }
