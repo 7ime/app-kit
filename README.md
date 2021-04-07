@@ -43,36 +43,37 @@ npm run build-storybook
 
 ### Ecosystem
 
-* [TypeScript](https://typescriptlang.org/) - primary Language.
-* [React.js](https://reactjs.org/) - library for building user interfaces.
-* [Redux](https://redux.js.org/) - managing app state.
-* [Redux toolkit](https://redux-toolkit.js.org/) - the official, opinionated, batteries-included toolset for efficient Redux development.
-* [Redux saga](https://redux-saga.js.org/) - library that aims to make application side effects.
-* [Reselect](https://github.com/reduxjs/reselect) - simple “selector” library for Redux.
-* [React router](https://reactrouter.com/) - collection of navigational components.
-* [Webpack](https://webpack.js.org/) - is used to compile JavaScript modules.
-* [Babel](https://babeljs.io/) - to be able to use a new generation of javascript.
-* [ESlint](https://eslint.org/) - linting code.
-* [Jest](https://jestjs.io/) - testing Framework.
-* [Redux saga test plan](https://github.com/jfairbank/redux-saga-test-plan) - makes testing sagas a breeze.
-* [Axios](https://github.com/axios/axios) - promise based HTTP client for the browser and node.js.
-* [Axios mock adapter](https://github.com/ctimmerm/axios-mock-adapter) - allows to easily mock requests.
-* [Lodash](https://lodash.com/) - a modern JavaScript utility library delivering modularity, performance & extras.
-* [I18next](https://www.i18next.com/) - internationalization-framework.
-* [CSS modules](https://github.com/css-modules/css-modules) - to solve the css class namespace problem.
-* [Sass](https://sass-lang.com/) - CSS with superpowers.
-* [Storybook](https://storybook.js.org/) - is an open source tool for developing UI components in isolation.
-* [React detect device](https://github.com/duskload/react-device-detect) - detect device.
-* [Classnames](https://github.com/JedWatson/classnames) - a simple JavaScript utility for conditionally joining classNames together.
-* [Country flags icons](https://gitlab.com/catamphetamine/country-flag-icons) - vector country flag icons.
-* [Libphonenumber js](https://github.com/catamphetamine/libphonenumber-js) - a simpler and smaller rewrite of Google Android's libphonenumber library in javascript.
-* [React helmet](https://github.com/nfl/react-helmet) - this reusable React component will manage all of your changes to the document head.
-* [React hook form](https://react-hook-form.com/) - performant, flexible and extensible forms with easy-to-use validation.
-* [React number format](https://github.com/s-yadav/react-number-format) - react component to format number in an input or as a text.
-* [React transition group](https://reactcommunity.org/react-transition-group/) - exposes simple components useful for defining entering and exiting transitions.
-* [Yup](https://github.com/jquense/yup) - is a JavaScript schema builder for value parsing and validation.
-* [React Material UI](https://material-ui.com/) - react components for faster and easier web development
-* [React Calendar](https://github.com/wojtekmaj/react-calendar) - ultimate calendar for your React app.
+1. [TypeScript](https://typescriptlang.org/) - primary Language.
+1. [React.js](https://reactjs.org/) - library for building user interfaces.
+1. [Redux](https://redux.js.org/) - managing app state.
+1. [Redux toolkit](https://redux-toolkit.js.org/) - the official, opinionated, batteries-included toolset for efficient Redux development.
+1. [Redux saga](https://redux-saga.js.org/) - library that aims to make application side effects.
+1. [React router](https://reactrouter.com/) - collection of navigational components.
+1. [Webpack](https://webpack.js.org/) - is used to compile JavaScript modules.
+1. [Babel](https://babeljs.io/) - to be able to use a new generation of javascript.
+1. [ESlint](https://eslint.org/) - linting code.
+1. [Jest](https://jestjs.io/) - testing Framework.
+1. [Redux saga test plan](https://github.com/jfairbank/redux-saga-test-plan) - makes testing sagas a breeze.
+1. [Axios](https://github.com/axios/axios) - promise based HTTP client for the browser and node.js.
+1. [Axios mock adapter](https://github.com/ctimmerm/axios-mock-adapter) - allows to easily mock requests.
+1. [CSS modules](https://github.com/css-modules/css-modules) - to solve the css class namespace problem.
+1. [Sass](https://sass-lang.com/) - CSS with superpowers.
+1. [Storybook](https://storybook.js.org/) - is an open source tool for developing UI components in isolation.
+1. [React detect device](https://github.com/duskload/react-device-detect) - detect device.
+1. [Classnames](https://github.com/JedWatson/classnames) - a simple JavaScript utility for conditionally joining classNames together.
+1. [Country flags icons](https://gitlab.com/catamphetamine/country-flag-icons) - vector country flag icons.
+1. [Libphonenumber js](https://github.com/catamphetamine/libphonenumber-js) - a simpler and smaller rewrite of Google Android's libphonenumber library in javascript.
+1. [React helmet](https://github.com/nfl/react-helmet) - this reusable React component will manage all of your changes to the document head.
+1. [React hook form](https://react-hook-form.com/) - performant, flexible and extensible forms with easy-to-use validation.
+1. [Yup](https://github.com/jquense/yup) - is a JavaScript schema builder for value parsing and validation.
+1. [React Material UI](https://material-ui.com/) - react components for faster and easier web development
+1. [React number format](https://github.com/s-yadav/react-number-format) - react component to format number in an input or as a text.
+1. [React Calendar](https://github.com/wojtekmaj/react-calendar) - ultimate calendar for your React app.
+1. [React transition group](https://reactcommunity.org/react-transition-group/) - exposes simple components useful for defining entering and exiting transitions.
+1. [Reselect](https://github.com/reduxjs/reselect) - simple “selector” library for Redux.
+1. [Moment](https://momentjs.com/) - parse, validate, manipulate, and display dates and times in JavaScript.
+1. [Lodash](https://lodash.com/) - a modern JavaScript utility library delivering modularity, performance & extras.
+1. [I18next](https://www.i18next.com/) - internationalization-framework.
 
 ### Testing
 ##### Test files are created next to files of components, functions, and classes
