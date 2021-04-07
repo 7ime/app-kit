@@ -1,6 +1,6 @@
 import {configuration} from '../config'
 
-const base = (rest: string) => `${configuration.remoteApi}/${rest}`
+const base = (rest: string) => `${configuration.remoteApi}${rest}`
 
 export default class Paths {
 
