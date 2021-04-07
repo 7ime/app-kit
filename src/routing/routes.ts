@@ -26,6 +26,5 @@ export default class Routes {
     static examples = class  {
         static root = () => base('examples')
         static uiKit = () => base('examples/ui-kit')
-        static authKit = () => base('examples/auth-kit')
     }
 }

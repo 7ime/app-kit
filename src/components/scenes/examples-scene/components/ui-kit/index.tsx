@@ -16,6 +16,7 @@ import RadiosKit from '@components/scenes/examples-scene/components/radios-kit'
 import InputsKit from '@components/scenes/examples-scene/components/inputs-kit'
 import SegmentsKit from '@components/scenes/examples-scene/components/segment-kit'
 import ButtonsKit from '@components/scenes/examples-scene/components/buttons-kit'
+import ModalsKit from '@components/scenes/examples-scene/components/modals-kit'
 
 const UiKit = () => {
     return (
@@ -28,6 +29,8 @@ const UiKit = () => {
                 <AvatarsKit />
                 <div className={css.divider} />
                 <ButtonsKit />
+                <div className={css.divider} />
+                <ModalsKit />
                 <div className={css.divider} />
                 <ValidationMessageKit />
                 <div className={css.divider} />
