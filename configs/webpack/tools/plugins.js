@@ -59,7 +59,6 @@ module.exports = {
             inject: true,
             filename: 'index.html',
             template: resolvePath(`${paths.source}/index.html`),
-            publicPath: isDevMode ? '' : process.env.APP_WEBSITE_BASE_URL,
             chunks: 'bundle',
             base: '/'
         })
