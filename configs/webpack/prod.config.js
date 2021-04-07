@@ -13,6 +13,7 @@ module.exports = function (webpackEnv, argv) {
         output: {
             filename: '[name].[contenthash:8].bundle.js',
             chunkFilename: '[name].[contenthash:8].bundle.js',
+            publicPath: `${process.env.APP_WEBSITE_ROOT_URL ? process.env.APP_WEBSITE_ROOT_URL : ''}/`
         },
         plugins: [
             plugins.cleanWebpackPlugin(),

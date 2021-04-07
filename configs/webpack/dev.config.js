@@ -16,7 +16,8 @@ module.exports = function (webpackEnv, argv) {
         mode,
         output: {
             filename: '[name].bundle.js',
-            chunkFilename: '[name].bundle.js'
+            chunkFilename: '[name].bundle.js',
+            publicPath: '/'
         },
         plugins: [
             plugins.htmlWebpackPlugin({
