@@ -25,6 +25,7 @@ const Modal: React.FC<IModal.Props> = (props) => {
         onOutsideClick,
         onExited,
         parentClass,
+        parentContentClass,
     } = props
 
     const classNames = classnames(
@@ -46,7 +47,7 @@ const Modal: React.FC<IModal.Props> = (props) => {
         <CSSTransition in={inProp} timeout={300} classNames={TRANSITION_CLASSNAME.modal} unmountOnExit onExited={onExited} appear>
             <div className={classNames}>
                 <div className={css.overlay} onClick={handleClick}/>
-                <div className={css.content}>
+                <div className={classnames(css.content, parentContentClass)}>
                     {children}
                 </div>
             </div>

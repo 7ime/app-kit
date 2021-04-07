@@ -2,6 +2,7 @@ import * as React from 'react'
 import css from './index.module.scss'
 import cssUiKit from '../ui-kit/index.module.scss'
 import Button from '@components/ui/buttons/components/button'
+import classnames from 'classnames'
 import Modal from '@components/ui/modal/components/modal'
 
 const ModalsKit = () => {
@@ -27,16 +28,14 @@ const ModalsKit = () => {
 
             {
                 open && (
-                    <Modal onOutsideClick={handleClose} in={show} onExited={handleExited}>
-                        <div className={css.modal}>
-                            <div className={css.text}>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci doloremque doloribus est eum expedita hic id incidunt itaque iusto, libero omnis quam ratione, repudiandae saepe sequi soluta, suscipit tempore.
-                            </div>
+                    <Modal onOutsideClick={handleClose} in={show} onExited={handleExited} parentContentClass={classnames(css.modal, css.modalContent)}>
+                        <div className={css.text}>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci doloremque doloribus est eum expedita hic id incidunt itaque iusto, libero omnis quam ratione, repudiandae saepe sequi soluta, suscipit tempore.
+                        </div>
 
-                            <div className={css.actions}>
-                                <Button type={'primary'} fill={'basic'} parentClass={css.button}>Some action</Button>
-                                <Button onClick={handleClose} type={'warning'} fill={'basic'} parentClass={css.button}>Close</Button>
-                            </div>
+                        <div className={css.actions}>
+                            <Button type={'primary'} fill={'basic'} parentClass={css.button}>Some action</Button>
+                            <Button onClick={handleClose} type={'warning'} fill={'basic'} parentClass={css.button}>Close</Button>
                         </div>
                     </Modal>
                 )
