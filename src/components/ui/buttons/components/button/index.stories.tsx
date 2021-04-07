@@ -1,7 +1,5 @@
 import * as React from 'react'
 import Button from '@components/ui/buttons/components/button/index'
-import ThemeContext from '@components/context/theme-context'
-import {ETheme} from '@constants/theme'
 
 export default {
     title: 'Button',
@@ -20,20 +18,8 @@ export const Primary = () => {
     return <Button type={'primary'}>Primary</Button>
 }
 
-export const PrimaryThemeDark = () => {
-    return (
-        <ThemeContext.Provider value={ETheme.dark}>
-            <Button type={'primary'}>Primary</Button>
-        </ThemeContext.Provider>
-    )
-}
-
 export const Secondary = () => {
     return <Button type={'secondary'}>Secondary</Button>
-}
-
-export const Warning = () => {
-    return <Button type={'warning'}>Warning</Button>
 }
 
 export const Disabled = () => {

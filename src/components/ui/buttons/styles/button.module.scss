@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     border: 1px solid transparent;
-    background-color: lighten($grey, 30%);
+    background-color: transparent;
     min-height: 3.5rem;
     padding: 10px;
     line-height: 1;
@@ -36,10 +36,27 @@
         border-radius: 2.8rem;
     }
 
-    &.basic.primary {
+    &.basic {
         &, &:visited {
             border-color: $white;
             background-color: $white;
+            color: $text_color;
+        }
+
+        &:hover, &:focus {
+            border-color: $grey_10;
+            background-color: $grey_10;
+        }
+
+        & .loaderComponent {
+            circle {
+                stroke: $black;
+            }
+        }
+    }
+
+    &.basic.primary {
+        &, &:visited {
             color: $blue;
         }
 
@@ -51,6 +68,60 @@
         & .loaderComponent {
             circle {
                 stroke: $blue;
+            }
+        }
+    }
+
+    &.basic.secondary {
+        &, &:visited {
+            color: $green;
+        }
+
+        &:hover, &:focus {
+            border-color: $green_10;
+            background-color: $green_10;
+        }
+
+        & .loaderComponent {
+            circle {
+                stroke: $green;
+            }
+        }
+    }
+
+    &.basic.warning {
+        &, &:visited {
+            border-color: $white;
+            background-color: $white;
+            color: $red;
+        }
+
+        &:hover, &:focus {
+            border-color: $red_10;
+            background-color: $red_10;
+        }
+
+        & .loaderComponent {
+            circle {
+                stroke: $red;
+            }
+        }
+    }
+
+    &.solid {
+        &, &:visited {
+            border-color: $grey_30;
+            background-color: $grey_30;
+        }
+
+        &:hover, &:focus {
+            border-color: darken($grey_30, 10%);
+            background-color: darken($grey_30, 10%);
+        }
+
+        & .loaderComponent {
+            circle {
+                stroke: $black;
             }
         }
     }
@@ -93,29 +164,10 @@
         }
     }
 
-    &.basic.warning {
-        &, &:visited {
-            border-color: $white;
-            background-color: $white;
-            color: $red;
-        }
-
-        &:hover, &:focus {
-            border-color: $red_10;
-            background-color: $red_10;
-        }
-
-        & .loaderComponent {
-            circle {
-                stroke: $red;
-            }
-        }
-    }
-
     &.solid.warning {
         &, &:visited {
             border-color: $red;
-            background-color: $blue_10;
+            background-color: $red;
             color: $white;
         }
 
@@ -131,6 +183,78 @@
         }
     }
 
+    &.outlined {
+        &, &:visited {
+            border-color: $grey_30;
+            color: $text_color;
+        }
+
+        &:hover, &:focus {
+            border-color: $grey_10;
+            background-color: $grey_10;
+        }
+
+        & .loaderComponent {
+            circle {
+                stroke: $black;
+            }
+        }
+    }
+
+    &.outlined.primary {
+        &, &:visited {
+            color: $blue;
+            border-color: $blue;
+        }
+
+        &:hover, &:focus {
+            border-color: $blue_10;
+            background-color: $blue_10;
+        }
+
+        & .loaderComponent {
+            circle {
+                stroke: $blue;
+            }
+        }
+    }
+
+    &.outlined.secondary {
+        &, &:visited {
+            border-color: $green;
+            color: $green;
+        }
+
+        &:hover, &:focus {
+            border-color: $green_10;
+            background-color: $green_10;
+        }
+
+        & .loaderComponent {
+            circle {
+                stroke: $green;
+            }
+        }
+    }
+
+    &.outlined.warning {
+        &, &:visited {
+            border-color: $red;
+            color: $red;
+        }
+
+        &:hover, &:focus {
+            border-color: $red_10;
+            background-color: $red_10;
+        }
+
+        & .loaderComponent {
+            circle {
+                stroke: $red;
+            }
+        }
+    }
+
     &.loader {
         pointer-events: none;
         font-size: 0;
@@ -140,16 +264,18 @@
         }
     }
 
-    &.is_disabled {
+    &.basic.is_disabled,
+    &.solid.is_disabled,
+    &.outlined.is_disabled {
         pointer-events: none;
         background-color: $white;
         font-weight: 500;
-        color: lighten($grey, 30%);
-        border-color: lighten($grey, 30%);
+        color: $grey_30;
+        border-color: $border_color;
 
         & .loaderComponent {
             circle {
-                stroke: lighten($grey, 30%);
+                stroke: $grey_30;
             }
         }
     }

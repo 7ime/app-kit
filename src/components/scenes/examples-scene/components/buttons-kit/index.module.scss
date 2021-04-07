@@ -1,0 +1,24 @@
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
+
+.buttonsKit {
+    .section {
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    .list {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-auto-rows: auto;
+        grid-gap: 20px;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+    }
+}

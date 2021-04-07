@@ -39,7 +39,7 @@ const ExamplesSidebar = (props: IProps) => {
                                  activeClassName={css.is_active}
                                  className={css.link}
                         >
-                            <div className={classnames(css.icon, css.uiKit)} />
+                            <div className={classnames(css.icon, css.folder)} />
                             <div className={css.text}>Ui kit</div>
                         </NavLink>
                     </div>
