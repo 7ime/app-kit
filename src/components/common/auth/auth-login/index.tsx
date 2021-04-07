@@ -21,14 +21,14 @@ interface IFieldsValues {
 }
 
 const AuthLogin = () => {
-    const {t} = useTranslation('login')
+    const {t} = useTranslation('auth')
 
     const [showErrorAlert, setShowErrorAlert] = React.useState(false)
 
     const {
         fields,
         submit
-    } = t<IFormInLocales<IFieldsValues>>('login:form', { returnObjects: true })
+    } = t<IFormInLocales<IFieldsValues>>('auth:login.form', { returnObjects: true })
 
     const schema = yup.object().shape({
         email: yup.string().required(fields.email.errors?.required).email(fields.email.errors?.email),
@@ -53,8 +53,8 @@ const AuthLogin = () => {
     return (
         <div className={css.authLogin}>
             <AuthContainer>
-                <AuthTitle>{t('login:title')}</AuthTitle>
-                <AuthDescription parentClass={css.description}>{t('login:description')}</AuthDescription>
+                <AuthTitle>{t('auth:login.title')}</AuthTitle>
+                <AuthDescription parentClass={css.description}>{t('auth:login.description')}</AuthDescription>
 
                 {
                     showErrorAlert && (
@@ -63,7 +63,7 @@ const AuthLogin = () => {
                             onClose={() => setShowErrorAlert(false)}
                             parentClass={css.alert}
                         >
-                            {t('login:alert.error')}
+                            {t('auth:login.alert.error')}
                         </Alert>
                     )
                 }

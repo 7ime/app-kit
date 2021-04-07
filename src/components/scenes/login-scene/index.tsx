@@ -5,12 +5,12 @@ import AuthLogin from '@components/common/auth/auth-login'
 import {useTranslation} from 'react-i18next'
 
 const LoginScene = () => {
-    const {t} = useTranslation('login')
+    const {t} = useTranslation('auth')
 
     return (
         <React.Fragment>
             <Helmet>
-                <title>{t('login:pageTitle')}</title>
+                <title>{t('auth:login.pageTitle')}</title>
             </Helmet>
 
             <AuthLayout>

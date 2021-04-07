@@ -23,12 +23,12 @@ interface IFieldsValues {
 }
 
 const AuthRegistration = () => {
-    const {t} = useTranslation('registration')
+    const {t} = useTranslation('auth')
 
     const {
         fields,
         submit
-    } = t<IFormInLocales<IFieldsValues>>('registration:form', { returnObjects: true })
+    } = t<IFormInLocales<IFieldsValues>>('auth:registration.form', { returnObjects: true })
 
     const [showInfoAlert, setShowInfoAlert] = React.useState(true)
     const [showSuccessAlert, setShowSuccessAlert] = React.useState(false)
@@ -59,8 +59,8 @@ const AuthRegistration = () => {
         <div className={css.authRegistration}>
 
             <AuthContainer>
-                <AuthTitle>{t('registration:title')}</AuthTitle>
-                <AuthDescription parentClass={css.description}>{t('registration:description')}</AuthDescription>
+                <AuthTitle>{t('auth:registration.title')}</AuthTitle>
+                <AuthDescription parentClass={css.description}>{t('auth:registration.description')}</AuthDescription>
 
                 {
                     showInfoAlert && (
@@ -70,7 +70,7 @@ const AuthRegistration = () => {
                         >
                             <div className={css.alertContent}>
                                 <div className={classnames(css.alertIcon, css.info)} />
-                                <div className={css.alertMessage}>{t('registration:alert.info')}</div>
+                                <div className={css.alertMessage}>{t('auth:registration.alert.info')}</div>
                             </div>
                         </Alert>
                     )
@@ -85,7 +85,7 @@ const AuthRegistration = () => {
                         >
                             <div className={css.alertContent}>
                                 <div className={classnames(css.alertIcon, css.success)} />
-                                <div className={css.alertMessage}>{t('registration:alert.success')}</div>
+                                <div className={css.alertMessage}>{t('auth:registration.alert.success')}</div>
                             </div>
                         </Alert>
                     )

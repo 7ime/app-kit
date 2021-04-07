@@ -29,12 +29,12 @@ interface IFieldsValues {
 }
 
 const AuthLoginByPhone = () => {
-    const {t} = useTranslation('loginByPhone')
+    const {t} = useTranslation('auth')
 
     const {
         fields,
         submit
-    } = t<IFormInLocales<IFieldsValues>>('loginByPhone:form', { returnObjects: true })
+    } = t<IFormInLocales<IFieldsValues>>('auth:loginByPhone.form', { returnObjects: true })
 
     const [showSuccessAlert, setShowSuccessAlert] = React.useState(false)
     const [countryCode, setCountryCode] = React.useState<IPhoneNumber.CountryCode | null>(null)
@@ -93,8 +93,8 @@ const AuthLoginByPhone = () => {
     return (
         <div className={css.authLoginByPhone}>
             <AuthContainer>
-                <AuthTitle>{t('loginByPhone:title')}</AuthTitle>
-                <AuthDescription parentClass={css.description}>{t('loginByPhone:description')}</AuthDescription>
+                <AuthTitle>{t('auth:loginByPhone.title')}</AuthTitle>
+                <AuthDescription parentClass={css.description}>{t('auth:loginByPhone.description')}</AuthDescription>
 
                 {
                     showSuccessAlert && (
@@ -105,7 +105,7 @@ const AuthLoginByPhone = () => {
                         >
                             <div className={css.alertContent}>
                                 <div className={classnames(css.alertIcon, css.success)} />
-                                <div className={css.alertMessage}>{t('loginByPhone:alert.success')}</div>
+                                <div className={css.alertMessage}>{t('auth:loginByPhone.alert.success')}</div>
                             </div>
                         </Alert>
                     )

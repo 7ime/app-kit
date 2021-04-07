@@ -5,12 +5,12 @@ import {useTranslation} from 'react-i18next'
 import AuthRegistration from '@components/common/auth/auth-registration'
 
 const RegistrationScene = () => {
-    const {t} = useTranslation('registration')
+    const {t} = useTranslation('auth')
 
     return (
         <React.Fragment>
             <Helmet>
-                <title>{t('registration:pageTitle')}</title>
+                <title>{t('auth:registration.pageTitle')}</title>
             </Helmet>
 
             <AuthLayout>

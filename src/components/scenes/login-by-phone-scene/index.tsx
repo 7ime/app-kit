@@ -5,11 +5,11 @@ import {useTranslation} from 'react-i18next'
 import AuthLoginByPhone from '@components/common/auth/auth-login-by-phone'
 
 const LoginByPhoneScene = () => {
-    const {t} = useTranslation('loginByPhone')
+    const {t} = useTranslation('auth')
     return (
         <React.Fragment>
             <Helmet>
-                <title>{t('loginByPhone:pageTitle')}</title>
+                <title>{t('auth:loginByPhone.pageTitle')}</title>
             </Helmet>
 
             <AuthLayout>
