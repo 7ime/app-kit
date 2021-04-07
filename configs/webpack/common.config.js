@@ -1,4 +1,4 @@
-const {resolvePath} = require('./tools/helpers')
+const {resolvePath, isDevMode} = require('./tools/helpers')
 const paths = require('./tools/paths')
 const rules = require('./tools/rules')
 const extensions = require('./tools/extensions')
@@ -12,7 +12,7 @@ module.exports = {
     },
     output: {
         path: resolvePath(paths.dist),
-        publicPath: '/'
+        publicPath: isDevMode() ? '/' : `${process.env.APP_WEBSITE_ROOT_URL}/`
     },
     resolve: {
         alias,
