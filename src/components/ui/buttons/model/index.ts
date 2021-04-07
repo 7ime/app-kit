@@ -15,12 +15,14 @@ namespace IButton {
         loader?: boolean
         disabled?: boolean
         title?: string
+        children?: React.ReactChild | React.ReactNode
+
         onMouseDown?(event: React.MouseEvent): unknown
         onMouseUp?(event: React.MouseEvent): unknown
         onClick?(event: React.MouseEvent): unknown
         onFocus?(event: React.FocusEvent): unknown
         onBlur?(event: React.FocusEvent): unknown
-        children?: React.ReactChild | React.ReactNode
+        onContextMenu?(event: React.MouseEvent): unknown
     }
 }
 
