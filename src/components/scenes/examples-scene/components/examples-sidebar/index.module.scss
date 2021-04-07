@@ -37,6 +37,20 @@
         flex-direction: column;
         margin-top: 20px;
 
+        .section {
+            margin-bottom: 30px;
+
+            .title {
+                color: $grey;
+                font-size: 11px;
+                padding: 0 15px;
+            }
+        }
+
+        .links {
+
+        }
+
         .link {
             display: flex;
             align-items: center;
@@ -62,12 +76,17 @@
                 background-size: 16px;
                 opacity: 0.4;
 
-                &.uiKit {
+                &.folder {
                     background-image: url('~@images/icons/folder.svg');
                 }
 
-                &.authKit {
+                &.key {
                     background-image: url('~@images/icons/key.svg');
+                }
+
+                &.userPlus {
+                    background-image: url('~@images/icons/user-plus.svg');
+                    background-size: 20px;
                 }
 
                 &.home {

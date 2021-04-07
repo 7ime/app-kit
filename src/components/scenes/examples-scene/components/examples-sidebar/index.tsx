@@ -22,30 +22,59 @@ const ExamplesSidebar = (props: IProps) => {
             <div className={css.logo}>App <span>Kit</span> <i>v1.0.0</i></div>
 
             <div className={css.menu}>
-                <NavLink to={Routes.home.root()}
-                         exact
-                         activeClassName={css.is_active}
-                         className={css.link}
-                >
-                    <div className={classnames(css.icon, css.home)} />
-                    <div className={css.text}>Home</div>
-                </NavLink>
+                <div className={css.section}>
+                    <div className={css.title}>General</div>
 
-                <NavLink to={Routes.examples.uiKit()}
-                         activeClassName={css.is_active}
-                         className={css.link}
-                >
-                    <div className={classnames(css.icon, css.uiKit)} />
-                    <div className={css.text}>Ui kit</div>
-                </NavLink>
+                    <div className={css.links}>
+                        <NavLink to={Routes.home.root()}
+                                 exact
+                                 activeClassName={css.is_active}
+                                 className={css.link}
+                        >
+                            <div className={classnames(css.icon, css.home)} />
+                            <div className={css.text}>Home</div>
+                        </NavLink>
 
-                <NavLink to={Routes.examples.authKit()}
-                         activeClassName={css.is_active}
-                         className={css.link}
-                >
-                    <div className={classnames(css.icon, css.authKit)} />
-                    <div className={css.text}>Auth kit</div>
-                </NavLink>
+                        <NavLink to={Routes.examples.uiKit()}
+                                 activeClassName={css.is_active}
+                                 className={css.link}
+                        >
+                            <div className={classnames(css.icon, css.uiKit)} />
+                            <div className={css.text}>Ui kit</div>
+                        </NavLink>
+                    </div>
+                </div>
+
+
+                <div className={css.section}>
+                    <div className={css.title}>Auth Kit</div>
+
+                    <div className={css.links}>
+                        <NavLink to={Routes.login.root()}
+                                 activeClassName={css.is_active}
+                                 className={css.link}
+                        >
+                            <div className={classnames(css.icon, css.key)} />
+                            <div className={css.text}>Login</div>
+                        </NavLink>
+
+                        <NavLink to={Routes.loginByPhone.root()}
+                                 activeClassName={css.is_active}
+                                 className={css.link}
+                        >
+                            <div className={classnames(css.icon, css.key)} />
+                            <div className={css.text}>Login by phone</div>
+                        </NavLink>
+
+                        <NavLink to={Routes.registration.root()}
+                                 activeClassName={css.is_active}
+                                 className={css.link}
+                        >
+                            <div className={classnames(css.icon, css.userPlus)} />
+                            <div className={css.text}>Registration</div>
+                        </NavLink>
+                    </div>
+                </div>
             </div>
         </div>
     )
