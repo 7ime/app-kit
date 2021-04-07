@@ -1,9 +1,9 @@
 import * as React from 'react'
-import css from './index.module.scss'
 import cssUiKit from '../ui-kit/index.module.scss'
 import Button from '@components/ui/buttons/components/button'
 import classnames from 'classnames'
 import Modal from '@components/ui/modal/components/modal'
+import css from './index.module.scss'
 
 const ModalsKit = () => {
     const [[open, show], setShow] = React.useState([false, false])
@@ -28,7 +28,7 @@ const ModalsKit = () => {
 
             {
                 open && (
-                    <Modal onOutsideClick={handleClose} in={show} onExited={handleExited} parentContentClass={classnames(css.modal, css.modalContent)}>
+                    <Modal onOutsideClick={handleClose} in={show} onExited={handleExited} parentContentClass={classnames(css.modal)}>
                         <div className={css.text}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci doloremque doloribus est eum expedita hic id incidunt itaque iusto, libero omnis quam ratione, repudiandae saepe sequi soluta, suscipit tempore.
                         </div>

@@ -1,9 +1,11 @@
 import * as React from 'react'
-import css from './index.module.scss'
 import cssUiKit from '../ui-kit/index.module.scss'
 import Button from '@components/ui/buttons/components/button'
 import ContextMenu from '@components/ui/context-menu/components/context-menu'
 import {ICursorPosition} from '@models/metrics'
+import ContextMenuList from '@components/ui/context-menu/components/context-menu-list'
+import ContextMenuItem from '@components/ui/context-menu/components/context-menu-item'
+import css from './index.module.scss'
 
 const ContextMenuKit = () => {
     const [show, setShow] = React.useState(false)
@@ -40,13 +42,13 @@ const ContextMenuKit = () => {
             {
                 cursorPosition && (
                     <ContextMenu in={show} onOutsideClick={handleClose} cursorPosition={cursorPosition} onExited={handleExited}>
-                        <div className={css.contextMenu}>
-                            <div className={css.contextMenuItem}>Some action 1</div>
-                            <div className={css.contextMenuItem}>Some action 2</div>
-                            <div className={css.contextMenuItem}>Some action 3</div>
-                            <div className={css.contextMenuItem}>Some action 4</div>
-                            <div className={css.contextMenuItem}>Some action 5</div>
-                        </div>
+                        <ContextMenuList parentClass={css.contextMenuList}>
+                            <ContextMenuItem parentClass={css.contextMenuItem}>Some action 1</ContextMenuItem>
+                            <ContextMenuItem parentClass={css.contextMenuItem}>Some action 2</ContextMenuItem>
+                            <ContextMenuItem parentClass={css.contextMenuItem}>Some action 3</ContextMenuItem>
+                            <ContextMenuItem parentClass={css.contextMenuItem}>Some action 4</ContextMenuItem>
+                            <ContextMenuItem parentClass={css.contextMenuItem}>Some action 5</ContextMenuItem>
+                        </ContextMenuList>
                     </ContextMenu>
                 )
             }

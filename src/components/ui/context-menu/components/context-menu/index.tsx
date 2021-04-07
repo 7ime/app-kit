@@ -15,7 +15,7 @@ interface IDirection {
     y: 'top' | 'bottom'
 }
 
-const ContextMenu: React.FC<IContextMenu.Props> = (props) => {
+const ContextMenu: React.FC<IContextMenu.MenuProps> = (props) => {
     invariant(!!modalNode, 'The "context-menu-root" element was not found. Please ensure your application has an element with the id "context-menu-root"')
 
     const {
@@ -33,12 +33,6 @@ const ContextMenu: React.FC<IContextMenu.Props> = (props) => {
         x: 'left',
         y: 'top'
     })
-
-    const classNames = classnames(
-        css.contextMenu,
-        css[`${direction.x}-${direction.y}`],
-        parentClass
-    )
 
     React.useEffect(() => {
         const checkBoundary = () => {
@@ -105,6 +99,12 @@ const ContextMenu: React.FC<IContextMenu.Props> = (props) => {
 
         return false
     }
+
+    const classNames = classnames(
+        css.contextMenu,
+        css[`${direction.x}-${direction.y}`],
+        parentClass
+    )
 
     return (
         ReactDOM.createPortal((
