@@ -43,7 +43,8 @@ module.exports = {
     miniCssExtractPlugin() {
         return new MiniCssExtractPlugin({
             filename: isDevMode() ? '[name].css' : '[name].[contenthash:8].css',
-            chunkFilename: isDevMode() ? '[id].css' : '[id].[contenthash:8].css'
+            chunkFilename: isDevMode() ? '[id].css' : '[id].[contenthash:8].css',
+            ignoreOrder: true,
         })
     },
     serviceWorker() {
