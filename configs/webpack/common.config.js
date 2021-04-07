@@ -11,7 +11,8 @@ module.exports = {
         main: './index.tsx'
     },
     output: {
-        path: resolvePath(paths.dist)
+        path: resolvePath(paths.dist),
+        publicPath: '/'
     },
     resolve: {
         alias,
@@ -33,6 +34,7 @@ module.exports = {
     },
     plugins: [
         plugins.definePlugin(),
+        plugins.inlineChunkHtmlPlugin(),
         plugins.forkTsCheckerWebpackPlugin(),
         plugins.miniCssExtractPlugin(),
         plugins.serviceWorker()

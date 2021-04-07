@@ -5,6 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const InlineChunkHtmlPlugin = require('inline-chunk-html-plugin');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
 const dotenv = require('dotenv')
 
@@ -59,8 +60,10 @@ module.exports = {
             inject: true,
             filename: 'index.html',
             template: resolvePath(`${paths.source}/index.html`),
-            chunks: 'bundle',
         })
+    },
+    inlineChunkHtmlPlugin() {
+      return new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/runtime/])
     },
     terserPlugin() {
         return new TerserPlugin({
