@@ -6,7 +6,6 @@ import {UiAction} from '@store/ui'
 import {WebNotificationAction} from '@store/web-notification'
 import {useTranslation} from 'react-i18next'
 
-const HomeScene = React.lazy(() => import('@components/scenes/home-scene'))
 const RestApiScene = React.lazy(() => import('@components/scenes/rest-api-scene'))
 const LoginScene = React.lazy(() => import('@components/scenes/login-scene'))
 const LoginByPhoneScene = React.lazy(() => import('@components/scenes/login-by-phone-scene'))
@@ -25,13 +24,12 @@ const App = () => {
     return (
         <React.Suspense fallback={null}>
             <Switch>
-                <Route path={Routes.home.root()} component={HomeScene} exact/>
                 <Route path={Routes.restApi.root()} component={RestApiScene}/>
                 <Route path={Routes.login.root()} component={LoginScene}/>
                 <Route path={Routes.loginByPhone.root()} component={LoginByPhoneScene}/>
                 <Route path={Routes.registration.root()} component={RegistrationScene}/>
                 <Route path={Routes.examples.root()} component={ExamplesScene}/>
-                <Redirect from='*' to={Routes.home.root()} exact/>
+                <Redirect from='*' to={Routes.examples.root()} exact/>
             </Switch>
         </React.Suspense>
     )
