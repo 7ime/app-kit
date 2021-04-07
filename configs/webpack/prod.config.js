@@ -1,10 +1,10 @@
 const merge = require('webpack-merge')
-
-const commonConfig = require('./common.config')
 const plugins = require('./tools/plugins')
 
 const mode = 'production'
 process.env.NODE_ENV = mode
+
+const commonConfig = require('./common.config')
 
 module.exports = function (webpackEnv, argv) {
     return merge(commonConfig, {

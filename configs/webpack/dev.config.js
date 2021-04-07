@@ -1,13 +1,15 @@
 const merge = require('webpack-merge')
 
 const {resolvePath} = require('./tools/helpers')
-const commonConfig = require('./common.config')
+
 const paths = require('./tools/paths')
 const plugins = require('./tools/plugins')
 
 const port = '8081'
 const mode = 'development'
 process.env.NODE_ENV = mode
+
+const commonConfig = require('./common.config')
 
 module.exports = function (webpackEnv, argv) {
     return merge(commonConfig, {
