@@ -126,7 +126,7 @@ npm run build-storybook
                     * index.stories.tsx
                     * index.module.scss
             ```
-        * ui - ui components (button, textfields etc)
+        * ui - ui components (buttons, textfields etc)
             ```
                 buttons
                     * components
@@ -143,11 +143,13 @@ npm run build-storybook
                     * styles
                         * button.module.scss
             ```
+        * utilities - specific components (OutsideClick etc)
     * constants - common constant
     * entities - stores entity models and DTO that come from the server
     * helpers - reused functions
     * i18n - setup, translations for internationalization
     * models - various reused interfaces, types
+    * modules - stores library abstractions and custom libraries
     * routing
         * model - this file contains the model for routing
         * router - this file responsible for connecting root (page) components
@@ -177,6 +179,7 @@ npm run build-storybook
         * environment - setting up the environment (prod, dev, test)
         * injects - this folder contains decorators to embed the functionality
         * middleware - redux middleware
+        * sample - store environment variables
         * tests - auxiliary tools for tests
         * type-definitions - d.ts files
         * utils - auxiliary tool
