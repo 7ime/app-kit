@@ -62,7 +62,17 @@ npm run build-storybook
 * [CSS modules](https://github.com/css-modules/css-modules) - to solve the css class namespace problem.
 * [Sass](https://sass-lang.com/) - CSS with superpowers.
 * [Storybook](https://storybook.js.org/) - is an open source tool for developing UI components in isolation.
-* [React detect device](https://github.com/duskload/react-device-detect) - detect device
+* [React detect device](https://github.com/duskload/react-device-detect) - detect device.
+* [Classnames](https://github.com/JedWatson/classnames) - a simple JavaScript utility for conditionally joining classNames together.
+* [Country flags icons](https://gitlab.com/catamphetamine/country-flag-icons) - vector country flag icons.
+* [Libphonenumber js](https://github.com/catamphetamine/libphonenumber-js) - a simpler and smaller rewrite of Google Android's libphonenumber library in javascript.
+* [React helmet](https://github.com/nfl/react-helmet) - this reusable React component will manage all of your changes to the document head.
+* [React hook form](https://react-hook-form.com/) - performant, flexible and extensible forms with easy-to-use validation.
+* [React number format](https://github.com/s-yadav/react-number-format) - react component to format number in an input or as a text.
+* [React transition group](https://reactcommunity.org/react-transition-group/) - exposes simple components useful for defining entering and exiting transitions.
+* [Yup](https://github.com/jquense/yup) - is a JavaScript schema builder for value parsing and validation.
+* [React Material UI](https://material-ui.com/) - react components for faster and easier web development
+* [React Calendar](https://github.com/wojtekmaj/react-calendar) - ultimate calendar for your React app.
 
 ### Testing
 ##### Test files are created next to files of components, functions, and classes
