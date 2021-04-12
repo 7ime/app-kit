@@ -9,7 +9,7 @@ i18next
     .use(LanguageDetector)
     .init({
         detection: {
-            cashes: ['localStorage'],
+            caches: ['localStorage'],
             lookupLocalStorage: LOCAL_STORAGE_LANG_KEY
         },
         fallbackLng: EI18nLanguages.EN,
