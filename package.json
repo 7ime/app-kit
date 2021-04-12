@@ -22,7 +22,7 @@
         "country-flag-icons": "^1.2.9",
         "i18next": "^19.8.1",
         "i18next-browser-languagedetector": "^6.0.1",
-        "libphonenumber-js": "^1.9.14",
+        "libphonenumber-js": "^1.9.16",
         "lodash": "^4.17.15",
         "moment": "^2.29.1",
         "react": "^17.0.2",
