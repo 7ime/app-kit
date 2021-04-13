@@ -15,7 +15,6 @@ import {IFormInLocales} from '@models/form'
 import AuthFormRow from '@components/common/auth/auth-form-row'
 import Input from '@components/ui/textfield/components/input'
 import Alert from '@components/ui/alert/components/alert'
-import {EI18nNameSpaces} from '@constants/i18n'
 
 interface IFieldsValues {
     email: string;
@@ -24,7 +23,7 @@ interface IFieldsValues {
 }
 
 const AuthRegistration = () => {
-    const {t} = useTranslation(EI18nNameSpaces.auth)
+    const {t} = useTranslation('auth')
 
     const {
         fields,

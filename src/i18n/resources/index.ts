@@ -1,10 +1,10 @@
-import {EI18nLanguages, EI18nNameSpaces} from '@constants/i18n'
+import {EI18nLanguages} from '@constants/i18n'
 
-export type II18nResources = Record<EI18nLanguages, Record<EI18nNameSpaces, Record<string, {}>>>
+export type II18nResources = Record<EI18nLanguages, {}>
 
 export const i18nResources: II18nResources = {
     [EI18nLanguages.EN]: {
-        [EI18nNameSpaces.countries]: require('../locales/en/countries.json'),
-        [EI18nNameSpaces.auth]: require('../locales/en/auth.json'),
+        countries: require('../locales/en/countries.json'),
+        auth: require('../locales/en/auth.json'),
     }
 }

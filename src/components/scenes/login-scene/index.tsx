@@ -3,10 +3,9 @@ import {Helmet} from 'react-helmet'
 import AuthLayout from '@components/common/layouts/auth-layout'
 import AuthLogin from '@components/common/auth/auth-login'
 import {useTranslation} from 'react-i18next'
-import {EI18nNameSpaces} from '@constants/i18n'
 
 const LoginScene = () => {
-    const {t} = useTranslation(EI18nNameSpaces.auth)
+    const {t} = useTranslation('auth')
 
     return (
         <React.Fragment>

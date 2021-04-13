@@ -32,7 +32,7 @@ const PhoneSelectCountry = (props: IProps) => {
         parentClass,
     } = props
 
-    const {t} = useTranslation()
+    const {t} = useTranslation('countries')
 
     const countries: Record<string, string> = t('countries:data', { returnObjects: true })
     const countriesOptions = React.useMemo(() => {
