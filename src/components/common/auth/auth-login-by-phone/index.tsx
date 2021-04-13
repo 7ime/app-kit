@@ -49,17 +49,16 @@ const AuthLoginByPhone = () => {
 
     const {
         handleSubmit,
-        errors,
         setValue,
-        formState,
+        formState: { errors, isSubmitted },
         register
     } = useForm<IFieldsValues>({
         resolver: yupResolver(schema)
     })
 
     React.useEffect(() => {
-        register({ name: 'countryCode' })
-        register({ name: 'phoneNumber' })
+        register('countryCode')
+        register('phoneNumber')
     }, [register])
 
     const handleChangeCountries = (option: ISelect.Option | null) => {
@@ -69,7 +68,7 @@ const AuthLoginByPhone = () => {
         setCountryCode(newCountryCode)
         setPhoneCallingCode(newCallingCode ? newCallingCode : '')
 
-        setValue('countryCode', newCountryCode, { shouldValidate: formState.isSubmitted })
+        setValue('countryCode', newCountryCode, { shouldValidate: isSubmitted })
     }
 
     const handleChangePhoneCode = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -79,11 +78,11 @@ const AuthLoginByPhone = () => {
         setPhoneCallingCode(newCallingCode)
         setCountryCode(newCountryCode)
 
-        setValue('countryCode', newCountryCode, { shouldValidate: formState.isSubmitted })
+        setValue('countryCode', newCountryCode, { shouldValidate: isSubmitted })
     }
 
     const handleChangePhoneNumber = ({ value }: NumberFormatValues) => {
-        setValue('phoneNumber', value, { shouldValidate: formState.isSubmitted })
+        setValue('phoneNumber', value, { shouldValidate: isSubmitted })
     }
 
     const handleSubmitAfterValidation = React.useCallback((data: IFieldsValues) => {

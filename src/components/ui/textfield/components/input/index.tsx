@@ -8,7 +8,7 @@ import {InputBaseProps, TextField} from '@material-ui/core'
 import TextFieldTriggerContainer from '@components/ui/textfield/components/textfield-trigger-container'
 import TextFieldTrigger from '@components/ui/textfield/components/textfield-trigger'
 
-const Input = (props: ITextField.InputProps) => {
+const Input = React.forwardRef<HTMLDivElement, ITextField.InputProps>((props, ref) => {
     const {
         onReset,
         error,
@@ -81,6 +81,7 @@ const Input = (props: ITextField.InputProps) => {
     return (
         <div className={classNames}>
             <TextField
+                ref={ref}
                 {...otherProps}
                 type={type}
                 autoFocus={autoFocus}
@@ -98,6 +99,6 @@ const Input = (props: ITextField.InputProps) => {
             )}
         </div>
     )
-}
+})
 
 export default React.memo(Input)

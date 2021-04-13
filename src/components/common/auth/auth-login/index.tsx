@@ -39,9 +39,8 @@ const AuthLogin = () => {
     const {
         handleSubmit,
         control,
-        errors,
         setValue,
-        formState,
+        formState: { errors, isSubmitted },
     } = useForm<IFieldsValues>({
         resolver: yupResolver(schema)
     })
@@ -75,14 +74,13 @@ const AuthLogin = () => {
                             name={fields.email.name}
                             control={control}
                             defaultValue={''}
-                            render={({ onChange, value }) => (
+                            render={({ field }) => (
                                 <Input
-                                    onChange={onChange}
-                                    value={value}
+                                    {...field}
                                     label={fields.email.label}
                                     error={!!errors.email}
                                     errorMessage={errors.email?.message}
-                                    onReset={() => setValue('email', '', { shouldValidate: formState.isSubmitted })}
+                                    onReset={() => setValue('email', '', { shouldValidate: isSubmitted })}
                                 />
                             )}
                         />
@@ -93,15 +91,14 @@ const AuthLogin = () => {
                             name={fields.password.name}
                             control={control}
                             defaultValue={''}
-                            render={({ onChange, value }) => (
+                            render={({ field }) => (
                                 <Input
+                                    {...field}
                                     type={'password'}
-                                    onChange={onChange}
-                                    value={value}
                                     label={fields.password.label}
                                     error={!!errors.password}
                                     errorMessage={errors.password?.message}
-                                    onReset={() => setValue('password', '', { shouldValidate: formState.isSubmitted })}
+                                    onReset={() => setValue('password', '', { shouldValidate: isSubmitted })}
                                 />
                             )}
                         />

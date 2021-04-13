@@ -2,7 +2,7 @@ export type IFormValidationRules = 'required' | 'email' | 'min' | 'confirm' | 'p
 
 export type IFormFieldsInLocales<T> = Record<keyof T, {
     label: string;
-    name: string;
+    name: keyof T;
     errors?: Partial<Record<IFormValidationRules, string>>;
 }>;
 

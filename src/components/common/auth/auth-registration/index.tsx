@@ -44,9 +44,8 @@ const AuthRegistration = () => {
     const {
         handleSubmit,
         control,
-        errors,
         setValue,
-        formState,
+        formState: { errors, isSubmitted },
     } = useForm<IFieldsValues>({
         resolver: yupResolver(schema)
     })
@@ -98,14 +97,13 @@ const AuthRegistration = () => {
                             name={fields.email.name}
                             control={control}
                             defaultValue={''}
-                            render={({ onChange, value }) => (
+                            render={({ field }) => (
                                 <Input
-                                    onChange={onChange}
-                                    value={value}
+                                    {...field}
                                     label={fields.email.label}
                                     error={!!errors.email}
                                     errorMessage={errors.email?.message}
-                                    onReset={() => setValue('email', '', { shouldValidate: formState.isSubmitted })}
+                                    onReset={() => setValue('email', '', { shouldValidate: isSubmitted })}
                                 />
                             )}
                         />
@@ -116,15 +114,14 @@ const AuthRegistration = () => {
                             name={fields.password.name}
                             control={control}
                             defaultValue={''}
-                            render={({ onChange, value }) => (
+                            render={({ field }) => (
                                 <Input
+                                    {...field}
                                     type={'password'}
-                                    onChange={onChange}
-                                    value={value}
                                     label={fields.password.label}
                                     error={!!errors.password}
                                     errorMessage={errors.password?.message}
-                                    onReset={() => setValue('password', '', { shouldValidate: formState.isSubmitted })}
+                                    onReset={() => setValue('password', '', { shouldValidate: isSubmitted })}
                                 />
                             )}
                         />
@@ -135,15 +132,14 @@ const AuthRegistration = () => {
                             name={fields.password2.name}
                             control={control}
                             defaultValue={''}
-                            render={({ onChange, value }) => (
+                            render={({ field }) => (
                                 <Input
+                                    {...field}
                                     type={'password'}
-                                    onChange={onChange}
-                                    value={value}
                                     label={fields.password2.label}
                                     error={!!errors.password2}
                                     errorMessage={errors.password2?.message}
-                                    onReset={() => setValue('password2', '', { shouldValidate: formState.isSubmitted })}
+                                    onReset={() => setValue('password2', '', { shouldValidate: isSubmitted })}
                                 />
                             )}
                         />
