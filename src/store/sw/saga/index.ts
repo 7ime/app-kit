@@ -5,6 +5,7 @@ import {SwAction} from '../index'
 import {checkSupportServiceWorkersEcosystem} from '@toolbox/utils/support-features'
 import {EPostMessageTypes} from '../../../post-message'
 import {IPostMessage} from '../../../post-message/model'
+import {Maybe} from '@toolbox/custom-types'
 
 const service: IService = getService()
 
@@ -25,7 +26,7 @@ export function* register() {
 }
 
 export function* unregister() {
-    const worker = yield call(service.swService.getRegistration)
+    const worker: Maybe<ServiceWorkerRegistration> = yield call(service.swService.getRegistration)
 
     if (worker) {
         yield call(service.swService.unregister, worker)

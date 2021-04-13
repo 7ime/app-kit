@@ -34,7 +34,7 @@ const PhoneSelectCountry = (props: IProps) => {
 
     const {t} = useTranslation()
 
-    const countries = t<Record<string, string>>('countries:data', { returnObjects: true })
+    const countries: Record<string, string> = t('countries:data', { returnObjects: true })
     const countriesOptions = React.useMemo(() => {
         return sortByAlphaOrder(transformCountriesToSelectOptions(countries), 'label')
     }, [])

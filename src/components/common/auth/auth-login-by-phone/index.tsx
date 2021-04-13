@@ -21,6 +21,7 @@ import {IPhoneNumber} from '@modules/phone-number/model'
 import PhoneCallingCode from '@components/common/phone/phone-calling-code'
 import PhoneSelectCountry from '@components/common/phone/phone-select-country'
 import {NumberFormatValues} from 'react-number-format'
+import {EI18nNameSpaces} from '@constants/i18n'
 
 interface IFieldsValues {
     countryCode: string | null;
@@ -29,12 +30,12 @@ interface IFieldsValues {
 }
 
 const AuthLoginByPhone = () => {
-    const {t} = useTranslation('auth')
+    const {t} = useTranslation(EI18nNameSpaces.auth)
 
     const {
         fields,
         submit
-    } = t<IFormInLocales<IFieldsValues>>('auth:loginByPhone.form', { returnObjects: true })
+    }: IFormInLocales<IFieldsValues> = t('auth:loginByPhone.form', { returnObjects: true })
 
     const [showSuccessAlert, setShowSuccessAlert] = React.useState(false)
     const [countryCode, setCountryCode] = React.useState<IPhoneNumber.CountryCode | null>(null)

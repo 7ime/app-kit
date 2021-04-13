@@ -8,7 +8,7 @@ import i18next from '@i18n/index'
 const service: IService = getService()
 
 export function* removePreloader() {
-    const isDeleted = yield call(service.uiService.removePreloader)
+    const isDeleted: boolean = yield call(service.uiService.removePreloader)
 
     if (isDeleted) {
         yield put(UiAction.preloaderDeleted())

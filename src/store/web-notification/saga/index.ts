@@ -12,7 +12,7 @@ export function* requestPermission() {
         const permission = service.webNotificationService.getPermission()
 
         if (permission !== EWebNotificationPermission.denied) {
-            const response = yield call(service.webNotificationService.requestPermission)
+            const response: EWebNotificationPermission = yield call(service.webNotificationService.requestPermission)
             yield put(WebNotificationAction.setPermission(response))
         }
     }
